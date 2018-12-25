@@ -50,3 +50,4 @@ build-iPhoneSimulator/
 .rvmrc
 .idea
 .rspec_status
+.byebug_history
