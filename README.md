@@ -1,23 +1,54 @@
-# autotask_ruby
-WIP - a Ruby client for interacting with the Autotask API version 1.6
+# AutotaskRuby
+
+Welcome to a ruby client that interacts with the Autotask API.
+
+I intend for this to be a full-featured Ruby Client for the API.
+It's still active development, but I expect that a 1.0 will be released around February 2019.
+
+Comments, PR's are more than welcome. I would love to hear any ideas or suggestions.
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'autotask_ruby'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install autotask_ruby
+
+## Usage
+
+TODO: Write usage instructions here
+
+## Development
+
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/autotask_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
-I am still developing this client.
+## License
 
-The client will not be a light client. Instead, it will be more descriptive and full.
-I know it's not "awesome code", but it works for me.
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-Additionally, every piece of code should have a test behind it.
+## Code of Conduct
 
-TODO: Code examples soon to follow.
-
-# Contributions
-Anyone is welcome to contribute or submit a PR.
+Everyone interacting in the AutotaskRuby project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/autotask_ruby/blob/master/CODE_OF_CONDUCT.md).
 
 # Thank you.
-
-Many thanks to a couple of people from whom I've shameless stolen code ideas.
-
+ 
+Many thanks to the follow from whom I've shameless stolen code ideas.
+ 
 * https://github.com/scoop/autotask_api
 * https://github.com/TinderBox/soapforce
-

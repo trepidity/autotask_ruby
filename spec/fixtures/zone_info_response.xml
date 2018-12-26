@@ -1,0 +1,13 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <getZoneInfoResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <getZoneInfoResult>
+        <URL>https://webservices2.autotask.net/ATServices/1.5/atws.asmx</URL>
+        <ErrorCode>0</ErrorCode>
+        <DataBaseType/>
+        <CI>30049</CI>
+        <WebUrl>https://ww2.autotask.net/</WebUrl>
+      </getZoneInfoResult>
+    </getZoneInfoResponse>
+  </soap:Body>
+</soap:Envelope>

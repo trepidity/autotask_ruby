@@ -1,0 +1,94 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="Resource">
+            <id>29684244</id>
+            <UserDefinedFields/>
+            <Active xsi:type="xsd:boolean">true</Active>
+            <Email xsi:type="xsd:string">jared@example.com</Email>
+            <Email2 xsi:type="xsd:string"/>
+            <Email3 xsi:type="xsd:string"/>
+            <EmailTypeCode xsi:type="xsd:string">PRIMARY</EmailTypeCode>
+            <FirstName xsi:type="xsd:string">Jared</FirstName>
+            <HomePhone xsi:type="xsd:string"/>
+            <Initials xsi:type="xsd:string"/>
+            <LastName xsi:type="xsd:string">Jennings</LastName>
+            <LocationID xsi:type="xsd:int">382930</LocationID>
+            <MiddleName xsi:type="xsd:string"/>
+            <MobilePhone xsi:type="xsd:string"/>
+            <OfficeExtension xsi:type="xsd:string"/>
+            <OfficePhone xsi:type="xsd:string"/>
+            <ResourceType xsi:type="xsd:string">Employee</ResourceType>
+            <Title xsi:type="xsd:string"/>
+            <UserName xsi:type="xsd:string">jjennings</UserName>
+            <UserType xsi:type="xsd:int">1</UserType>
+            <DateFormat xsi:type="xsd:string">MM/dd/yyyy</DateFormat>
+            <TimeFormat xsi:type="xsd:string">hh:mm a</TimeFormat>
+            <Password xsi:type="xsd:string">******</Password>
+            <PayrollType xsi:type="xsd:int">1</PayrollType>
+            <NumberFormat xsi:type="xsd:string">X,XXX.XX</NumberFormat>
+            <AccountingReferenceID xsi:type="xsd:string"/>
+            <InternalCost xsi:type="xsd:decimal">175.0000</InternalCost>
+            <HireDate xsi:type="xsd:dateTime">2011-10-27T00:00:00</HireDate>
+            <LicenseType xsi:type="xsd:int">1</LicenseType>
+          </Entity>
+          <Entity xsi:type="Resource">
+            <id>29684250</id>
+            <UserDefinedFields/>
+            <Active xsi:type="xsd:boolean">true</Active>
+            <Email xsi:type="xsd:string">rspecninjatools@example.com</Email>
+            <Email2 xsi:type="xsd:string"/>
+            <Email3 xsi:type="xsd:string"/>
+            <EmailTypeCode xsi:type="xsd:string">PRIMARY</EmailTypeCode>
+            <FirstName xsi:type="xsd:string">Raymond</FirstName>
+            <Greeting xsi:type="xsd:int">1</Greeting>
+            <HomePhone xsi:type="xsd:string"/>
+            <Initials xsi:type="xsd:string">RCJ</Initials>
+            <LastName xsi:type="xsd:string">Jennings</LastName>
+            <LocationID xsi:type="xsd:int">382930</LocationID>
+            <MiddleName xsi:type="xsd:string"/>
+            <MobilePhone xsi:type="xsd:string"/>
+            <OfficeExtension xsi:type="xsd:string"/>
+            <OfficePhone xsi:type="xsd:string"/>
+            <ResourceType xsi:type="xsd:string">Employee</ResourceType>
+            <Title xsi:type="xsd:string"/>
+            <UserName xsi:type="xsd:string">rjennings</UserName>
+            <UserType xsi:type="xsd:int">5</UserType>
+            <DateFormat xsi:type="xsd:string">MM/dd/yyyy</DateFormat>
+            <TimeFormat xsi:type="xsd:string">hh:mm a</TimeFormat>
+            <Password xsi:type="xsd:string">******</Password>
+            <PayrollType xsi:type="xsd:int">1</PayrollType>
+            <NumberFormat xsi:type="xsd:string">X,XXX.XX</NumberFormat>
+            <AccountingReferenceID xsi:type="xsd:string"/>
+            <InternalCost xsi:type="xsd:decimal">95.0000</InternalCost>
+            <HireDate xsi:type="xsd:dateTime">2012-02-03T00:00:00</HireDate>
+            <LicenseType xsi:type="xsd:int">4</LicenseType>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>resource</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>29684244</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+          <EntityReturnInfo>
+            <EntityId>29684250</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>

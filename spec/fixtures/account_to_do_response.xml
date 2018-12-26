@@ -1,0 +1,37 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="AccountToDo">
+            <id>29684510</id>
+            <UserDefinedFields/>
+            <AccountID xsi:type="xsd:int">296162</AccountID>
+            <ContactID xsi:type="xsd:int">296409</ContactID>
+            <AssignedToResourceID xsi:type="xsd:int">29684250</AssignedToResourceID>
+            <StartDateTime xsi:type="xsd:dateTime">2018-11-11T08:37:00</StartDateTime>
+            <EndDateTime xsi:type="xsd:dateTime">2018-11-11T09:27:00</EndDateTime>
+            <ActionType xsi:type="xsd:int">295993</ActionType>
+            <ActivityDescription xsi:type="xsd:string">Placeat officiis deserunt. Et magnam voluptatem. Dolor qui rerum.</ActivityDescription>
+            <CreateDateTime xsi:type="xsd:dateTime">2018-11-11T08:27:09.267</CreateDateTime>
+            <CreatorResourceID xsi:type="xsd:int">29684292</CreatorResourceID>
+            <LastModifiedDate xsi:type="xsd:dateTime">2018-11-11T08:27:09.267</LastModifiedDate>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>accounttodo</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>29684510</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>

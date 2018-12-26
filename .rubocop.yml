@@ -1,0 +1,8 @@
+require: rubocop-rspec
+
+Metrics/ClassLength:
+  Max: 120
+Metrics/LineLength:
+  Max: 120
+Layout/IndentationWidth:
+  Width: 4
