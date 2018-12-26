@@ -1,5 +1,7 @@
 # AutotaskRuby
 
+[ ![Codeship Status for trepidity/autotask_ruby](https://app.codeship.com/projects/31f37600-eacf-0136-594e-46a5d8fcc7b0/status?branch=master)](https://app.codeship.com/projects/319798)
+
 Welcome to a ruby client that interacts with the Autotask API.
 
 I intend for this to be a full-featured Ruby Client for the API.
