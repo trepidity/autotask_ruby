@@ -34,12 +34,14 @@ module FixtureHelpers
         end
 
         def http_body(query_xml)
+            # be very careful with this block.
+            # the trailing spaces are required for webmock to work.
             body = <<~EOF
                 <?xml version="1.0" encoding="UTF-8"?>
-                <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:tns="http://autotask.net/ATWS/v1_5/"
-                xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+                <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                xmlns:tns="http://autotask.net/ATWS/v1_5/" 
+                xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" 
                 xmlns="http://autotask.net/ATWS/v1_5/">
                 <env:Header><tns:AutotaskIntegrations>
                 <tns:IntegrationCode>BDKQY55L24ANTHTRZXDVQKKQWS</tns:IntegrationCode>
@@ -65,8 +67,6 @@ module FixtureHelpers
             {
                 'Accept' => '*/*',
                 'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-                # 'Authorization'=>'Basic YXBpX3VzZXJAamFyZWRqZW5uaW5nc2RlbW8uY29tOjBTVXFWeFprVFdNdm9FQ1g4OURIMnpVMTYyRGM5Y0Rka2gxS3JBeU4=',
-                # 'Content-Length'=>'641',
                 'Content-Type' => 'text/xml;charset=UTF-8',
                 'Soapaction' => '"http://autotask.net/ATWS/v1_5/query"',
                 'User-Agent' => 'Ruby'
