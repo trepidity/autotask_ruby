@@ -7,13 +7,14 @@ RSpec.describe AutotaskRuby::AccountToDo do
     let(:valid_password) { 'something' }
     let(:client) do
         AutotaskRuby::Client.new(basic_auth: [valid_api_user, valid_password],
-                                 integration_code: 'BDKQY55L24ANTHTRZXDVQKKQWS',
+                                 integration_code: ENV['INTEGRATION_CODE'],
                                  endpoint: endpoint)
     end
     let(:result) { client.find('AccountToDo', 29_684_510) }
 
     before do
-        stub_api_request(query_xml: body, fixture: 'account_to_do_response')
+        stub_api_request(query_xml: body, fixture: 'account_to_do_response',
+                         env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
     end
 
     it { expect(result.id).to eql(29_684_510) }

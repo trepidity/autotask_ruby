@@ -66,7 +66,7 @@ module FixtureHelpers
                 'Accept' => '*/*',
                 'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
                 'Content-Type' => 'text/xml;charset=UTF-8',
-                'Soapaction' => (options[:soap_action]).to_s || '"http://autotask.net/ATWS/v1_5/query"',
+                'Soapaction' => options[:soap_action] ||= '"http://autotask.net/ATWS/v1_5/query"',
                 'User-Agent' => 'Ruby'
             }
         end

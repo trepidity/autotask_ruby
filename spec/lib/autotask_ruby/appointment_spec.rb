@@ -7,7 +7,7 @@ RSpec.describe AutotaskRuby::Appointment do
     let(:valid_password) { 'something' }
     let(:client) do
         AutotaskRuby::Client.new(basic_auth: [valid_api_user, valid_password],
-                                 integration_code: 'BDKQY55L24ANTHTRZXDVQKKQWS',
+                                 integration_code: ENV['INTEGRATION_CODE'],
                                  endpoint: endpoint)
     end
 
@@ -27,7 +27,9 @@ RSpec.describe AutotaskRuby::Appointment do
         let(:result) { appointment.update }
 
         before do
-            stub_api_request(query_xml: body, fixture: 'appointment_response', soap_action: '"http://autotask.net/ATWS/v1_5/update"')
+            stub_api_request(query_xml: body, fixture: 'appointment_response',
+                             soap_action: '"http://autotask.net/ATWS/v1_5/update"',
+                             env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end
 
         it { expect(appointment.title).to eql('Optio accusantium quis nulla.') }
@@ -39,7 +41,9 @@ RSpec.describe AutotaskRuby::Appointment do
         let(:find) { client.find('Appointment', 1209) }
 
         before do
-            stub_api_request(query_xml: body, fixture: 'appointment_response', soap_action: '"http://autotask.net/ATWS/v1_5/query"')
+            stub_api_request(query_xml: body, fixture: 'appointment_response',
+                             soap_action: '"http://autotask.net/ATWS/v1_5/query"',
+                             env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end
 
         it { expect(find.id).to eql(1209) }

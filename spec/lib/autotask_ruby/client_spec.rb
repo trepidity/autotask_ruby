@@ -23,14 +23,14 @@ module AutotaskRuby
             let(:client) do
                 AutotaskRuby::Client.new(basic_auth: [valid_api_user, valid_password],
                                          endpoint: endpoint,
-                                         integration_code: 'BDKQY55L24ANTHTRZXDVQKKQWS')
+                                         integration_code: ENV['INTEGRATION_CODE'])
             end
             let(:query) { client.query('Resource', 'LastName', 'equals', 'jennings') }
 
             before do
                 stub_api_request(query_xml: BODY, fixture: 'query_response',
                                  soap_action: '"http://autotask.net/ATWS/v1_5/query"',
-                                 env_headers: { integration_code: 'BDKQY55L24ANTHTRZXDVQKKQWS' })
+                                 env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
             end
 
             it { expect(query).to be_instance_of(QueryResponse) }

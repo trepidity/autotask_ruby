@@ -7,14 +7,15 @@ RSpec.describe :resource do
     let(:valid_password) { 'something' }
     let(:client) do
         AutotaskRuby::Client.new(basic_auth: [valid_api_user, valid_password],
-                                 integration_code: 'BDKQY55L24ANTHTRZXDVQKKQWS',
+                                 integration_code: ENV['INTEGRATION_CODE'],
                                  endpoint: endpoint)
     end
     let(:subject) { client.find(:resource, 29_684_250) }
 
     context 'resource' do
         before do
-            stub_api_request(query_xml: body, fixture: 'query_resource_response')
+            stub_api_request(query_xml: body, fixture: 'query_resource_response',
+                             env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end
 
         it { expect(subject.first_name).to eql('Raymond') }
