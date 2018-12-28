@@ -25,7 +25,7 @@ module FixtureHelpers
 
             instance_url = options[:instance_url] || 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx'
             stub_request(options[:method], instance_url)
-                .with(body: http_body(options[:query_xml]), headers: http_headers)
+                .with(body: http_body(options[:query_xml]), headers: http_headers(options))
                 .to_return(status: 200, body: fixture(options[:fixture]), headers: {})
         end
 
@@ -63,12 +63,12 @@ module FixtureHelpers
               'User-Agent' => 'Ruby' }
         end
 
-        def http_headers
+        def http_headers(options = {})
             {
                 'Accept' => '*/*',
                 'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
                 'Content-Type' => 'text/xml;charset=UTF-8',
-                'Soapaction' => '"http://autotask.net/ATWS/v1_5/query"',
+                'Soapaction' => (options[:soap_action]).to_s || '"http://autotask.net/ATWS/v1_5/query"',
                 'User-Agent' => 'Ruby'
             }
         end

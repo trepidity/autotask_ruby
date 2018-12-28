@@ -11,10 +11,10 @@ module AutotaskRuby
         VALID_USERNAME = 'jared@jaredjenningsdemo.com'
 
         describe 'operations' do
-            let(:subject) { AutotaskRuby::Client.new }
+            let(:client) { AutotaskRuby::Client.new }
 
-            it { expect(subject.operations).to be_an(Array) }
-            it { expect(subject.operations).to include(:query) }
+            it { expect(client.operations).to be_an(Array) }
+            it { expect(client.operations).to include(:query) }
         end
 
         describe 'query objects' do
@@ -25,18 +25,19 @@ module AutotaskRuby
                                          endpoint: endpoint,
                                          integration_code: 'BDKQY55L24ANTHTRZXDVQKKQWS')
             end
-            let(:subject) { client.query('Resource', 'LastName', 'equals', 'jennings') }
+            let(:query) { client.query('Resource', 'LastName', 'equals', 'jennings') }
 
             before do
-                stub_api_request(query_xml: BODY, fixture: 'query_response')
+                stub_api_request(query_xml: BODY, fixture: 'query_response', soap_action: '"http://autotask.net/ATWS/v1_5/query"')
             end
 
-            it { expect(subject).to be_instance_of(QueryResponse) }
-            it { expect(subject.entity_type).to eq('Resource') }
-            it { expect(subject.entities.last.id).to eql(29_684_250) }
-            it { expect(subject.entities.last.email).to eql('rspecninjatools@example.com') }
-            it { expect(subject.entities.last.first_name).to eql('Raymond') }
-            it { expect(subject.entities.last.last_name).to eql('Jennings') }
+            it { expect(query).to be_instance_of(QueryResponse) }
+            it { expect(query.entity_type).to eq('Resource') }
+            it { expect(query.entities.last.id).to eql(29_684_250) }
+            it { expect(query.entities.last.email).to eql('rspecninjatools@example.com') }
+            it { expect(query.entities.last.first_name).to eql('Raymond') }
+            it { expect(query.entities.last.last_name).to eql('Jennings') }
         end
+
     end
 end

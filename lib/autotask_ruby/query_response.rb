@@ -21,7 +21,7 @@ module AutotaskRuby
 
             klass = ('AutotaskRuby::' + results.first.attribute('type').to_s).constantize
             results.collect do |entity|
-                obj = klass.new(@client)
+                obj = klass.new(client: @client)
                 obj.build(entity)
                 @entities.push(obj)
             end

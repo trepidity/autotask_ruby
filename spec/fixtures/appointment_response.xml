@@ -1,0 +1,35 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="Appointment">
+            <id>1209</id>
+            <UserDefinedFields/>
+            <ResourceID xsi:type="xsd:int">29684250</ResourceID>
+            <Title xsi:type="xsd:string">Optio accusantium quis nulla.</Title>
+            <StartDateTime xsi:type="xsd:dateTime">2018-11-17T22:32:00</StartDateTime>
+            <EndDateTime xsi:type="xsd:dateTime">2018-11-17T23:22:00</EndDateTime>
+            <Description xsi:type="xsd:string">Numquam sapiente atque. Quisquam doloribus at. Rerum ut est.</Description>
+            <CreatorResourceID xsi:type="xsd:int">29684292</CreatorResourceID>
+            <CreateDateTime xsi:type="xsd:dateTime">2018-11-17T22:22:28.553</CreateDateTime>
+            <UpdateDateTime xsi:type="xsd:dateTime">2018-11-17T22:22:28.553</UpdateDateTime>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>appointment</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>1209</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>
