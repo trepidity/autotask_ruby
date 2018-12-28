@@ -28,7 +28,9 @@ module AutotaskRuby
             let(:query) { client.query('Resource', 'LastName', 'equals', 'jennings') }
 
             before do
-                stub_api_request(query_xml: BODY, fixture: 'query_response', soap_action: '"http://autotask.net/ATWS/v1_5/query"')
+                stub_api_request(query_xml: BODY, fixture: 'query_response',
+                                 soap_action: '"http://autotask.net/ATWS/v1_5/query"',
+                                 env_headers: { integration_code: 'BDKQY55L24ANTHTRZXDVQKKQWS' })
             end
 
             it { expect(query).to be_instance_of(QueryResponse) }

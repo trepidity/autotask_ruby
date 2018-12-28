@@ -25,7 +25,7 @@ module FixtureHelpers
 
             instance_url = options[:instance_url] || 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx'
             stub_request(options[:method], instance_url)
-                .with(body: http_body(options[:query_xml]), headers: http_headers(options))
+                .with(body: http_body(options[:env_headers], options[:query_xml]), headers: http_headers(options))
                 .to_return(status: 200, body: fixture(options[:fixture]), headers: {})
         end
 
@@ -33,7 +33,7 @@ module FixtureHelpers
             File.read(File.expand_path("../../fixtures/#{f}.xml", __FILE__))
         end
 
-        def http_body(query_xml)
+        def http_body(env_headers, query_xml)
             # be very careful with this block.
             # the trailing spaces are required for webmock to work.
             body = <<~EOF
@@ -43,9 +43,7 @@ module FixtureHelpers
                 xmlns:tns="http://autotask.net/ATWS/v1_5/" 
                 xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" 
                 xmlns="http://autotask.net/ATWS/v1_5/">
-                <env:Header><tns:AutotaskIntegrations>
-                <tns:IntegrationCode>BDKQY55L24ANTHTRZXDVQKKQWS</tns:IntegrationCode>
-                </tns:AutotaskIntegrations></env:Header>
+                #{soap_headers(env_headers)}
                 <env:Body>
                 #{query_xml}
                 </env:Body>
@@ -76,9 +74,9 @@ module FixtureHelpers
         def soap_headers(params = {})
             return '' if params.nil? || params.empty?
 
-            headers = '<env:Header>'
-            headers << "<tns:CallOptions><tns:client>#{params[:client_id]}</tns:client></tns:CallOptions>" if params[:client_id]
-            headers << "<tns:SessionHeader><tns:sessionId>#{params[:session_id]}</tns:sessionId></tns:SessionHeader>" if params[:session_id]
+            headers = ++''
+            headers << '<env:Header>'
+            headers << "<tns:AutotaskIntegrations><tns:IntegrationCode>#{params[:integration_code]}</tns:IntegrationCode></tns:AutotaskIntegrations>"
             headers << '</env:Header>'
         end
     end
