@@ -4,11 +4,11 @@ require 'autotask_ruby/version'
 require 'autotask_ruby/resource'
 
 module AutotaskRuby
-    class Client
-        include Query
 
+    # the primary client that interfaces with the SOAP Client that will interface with AutoTask.
+    class Client
         NAMESPACE = 'http://autotask.net/ATWS/v1_5/'
-        attr_accessor :client, :headers, :logger
+        attr_accessor :soap_client, :headers, :logger
 
         def initialize(options = {})
             @headers = {
@@ -28,7 +28,7 @@ module AutotaskRuby
                 savon_options[key] = options[key] if options.key?(key)
             end
 
-            @client = Savon.client({
+            @soap_client = Savon.client({
                 wsdl: './atws.wsdl',
                 soap_header: @headers,
                 namespaces: { xmlns: NAMESPACE },
@@ -43,7 +43,7 @@ module AutotaskRuby
         # Public: Get the names of all wsdl operations.
         # List all available operations from the atws.wsdl
         def operations
-            @client.operations
+            @soap_client.operations
         end
 
         # @param entity, id
@@ -58,5 +58,16 @@ module AutotaskRuby
 
             response.entities.first
         end
+
+        # @param entity_type and value
+        # Other parameters, are optional.
+        #   full set of parameters include entity_type, field, operation, value.
+        # Queries the Autotask QUERY API. Returns a QueryResponse result set.
+        # @return AutotaskRuby::Response.
+        def query(entity_type, field = 'id', operation = 'equals', value)
+            result = @soap_client.call(:query, message: "<sXML><![CDATA[<queryxml><entity>#{entity_type}</entity><query><field>#{field}<expression op=\"#{operation}\">#{value}</expression></field></query></queryxml>]]></sXML>")
+            AutotaskRuby::QueryResponse.new(@client, result)
+        end
+
     end
 end

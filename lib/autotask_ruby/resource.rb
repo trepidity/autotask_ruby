@@ -20,7 +20,7 @@ module AutotaskRuby
         end
 
         def account_to_dos
-            query('AccountToDo', 'AssignedToResourceID', @id).entities
+            query('AccountToDo', 'AssignedToResourceID', @id)
         end
     end
 end

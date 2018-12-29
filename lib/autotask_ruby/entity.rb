@@ -25,7 +25,7 @@ module AutotaskRuby
         end
 
         def update
-            @client.client.call(:update, message: "<Entity xsi:type=\"#{self.class.to_s.demodulize}\">#{fields_to_xml}</Entity>")
+            @client.soap_client.call(:update, message: "<Entity xsi:type=\"#{self.class.to_s.demodulize}\">#{fields_to_xml}</Entity>")
         end
 
         def to_date_time(arg)
