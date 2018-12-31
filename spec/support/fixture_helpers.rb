@@ -25,6 +25,10 @@ module FixtureHelpers
                 .to_return(status: 200, body: fixture(options[:fixture]), headers: {})
         end
 
+        def time_with_zone
+            Time.find_zone!('Eastern Time (US & Canada)')
+        end
+
         def stub_api_request(options = {})
             options = {
                 method: :post,
