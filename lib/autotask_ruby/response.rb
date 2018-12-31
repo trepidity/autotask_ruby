@@ -6,10 +6,10 @@ module AutotaskRuby
         def initialize(client, response)
             @client = client
             @entities = []
-            @errors = response.xpath('//Autotask:Errors', Autotask: NAMESPACE).text
-            @return_code = response.xpath('//Autotask:ReturnCode', Autotask: NAMESPACE).text.to_i
-            @entity_type = response.xpath('//Autotask:EntityResultType', Autotask: NAMESPACE).text.classify
-            parse_entities(response.xpath('//Autotask:Entity', Autotask: NAMESPACE))
+            @errors = response.xpath('//Autotask:Errors', Autotask: AutotaskRuby.configuration.namespace).text
+            @return_code = response.xpath('//Autotask:ReturnCode', Autotask: AutotaskRuby.configuration.namespace).text.to_i
+            @entity_type = response.xpath('//Autotask:EntityResultType', Autotask: AutotaskRuby.configuration.namespace).text.classify
+            parse_entities(response.xpath('//Autotask:Entity', Autotask: AutotaskRuby.configuration.namespace))
         end
 
         private

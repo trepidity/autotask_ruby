@@ -64,7 +64,7 @@ module AutotaskRuby
         # - entity
         # - field
         def field_set(entity, field)
-            node = entity.xpath("Autotask:#{field}", Autotask: NAMESPACE)
+            node = entity.xpath("Autotask:#{field}", Autotask: AutotaskRuby.configuration.namespace)
 
             # entity may not contain all fields that are possible.
             # Example: The entity may not have a contact specified.

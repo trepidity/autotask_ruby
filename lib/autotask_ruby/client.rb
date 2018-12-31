@@ -7,10 +7,10 @@ module AutotaskRuby
 
     # the primary client that interfaces with the SOAP Client that will interface with AutoTask.
     class Client
-        NAMESPACE = 'http://autotask.net/ATWS/v1_5/'
         attr_accessor :soap_client, :headers, :logger
 
         def initialize(options = {})
+            @version = options[:version] || AutotaskRuby.configuration.version
             integration_code = options[:integration_code] || AutotaskRuby.configuration.integration_code
             @headers = {
                 'tns:AutotaskIntegrations' =>
@@ -20,7 +20,7 @@ module AutotaskRuby
             }
 
             @ssl_version = options[:ssl_version] || :TLSv1_2
-            @version = options[:version] || AutotaskRuby.configuration.version
+
             @host = options[:host] || 'webservices.autotask.net'
             @endpoint = options[:endpoint] || "https://#{@host}/ATServices/#{@version}/atws.asmx"
 
@@ -34,7 +34,7 @@ module AutotaskRuby
             @soap_client = Savon.client({
                 wsdl: './atws.wsdl',
                 soap_header: @headers,
-                namespaces: { xmlns: NAMESPACE },
+                namespaces: { xmlns: AutotaskRuby.configuration.namespace },
                 logger: Logger.new($stdout),
                 raise_errors: false,
                 log: true,
