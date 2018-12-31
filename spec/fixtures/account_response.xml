@@ -1,0 +1,124 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="Account">
+            <id>296162</id>
+            <UserDefinedFields>
+              <UserDefinedField>
+                <Name>Continuum Site ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Email List</Name>
+                <Value>YES</Value>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Kaseya Customer ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>LogMeIn Account ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Managed Services Site ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Managed Workplace Site ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>N-central Customer ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Newsletter List</Name>
+                <Value>1</Value>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Number of Employees</Name>
+                <Value>25.0000</Value>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Revenue</Name>
+                <Value>0</Value>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Salesforce Account ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Silverback Name Site ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Silverback Site ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>sync_exclude</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Telemarketing Status</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>VARStreet Account ID</Name>
+              </UserDefinedField>
+            </UserDefinedFields>
+            <Address1 xsi:type="xsd:string">163 Consaul Road</Address1>
+            <AlternatePhone1 xsi:type="xsd:string"/>
+            <AlternatePhone2 xsi:type="xsd:string"/>
+            <City xsi:type="xsd:string">Albany</City>
+            <Country xsi:type="xsd:string">United States</Country>
+            <CreateDate xsi:type="xsd:dateTime">2011-10-04T10:54:20</CreateDate>
+            <Fax xsi:type="xsd:string">518-454-7870</Fax>
+            <KeyAccountIcon xsi:type="xsd:int">1</KeyAccountIcon>
+            <LastActivityDate xsi:type="xsd:dateTime">2011-10-27T08:38:32</LastActivityDate>
+            <AccountName xsi:type="xsd:string">ABLE Manufacturing*</AccountName>
+            <AccountNumber xsi:type="xsd:string">05</AccountNumber>
+            <OwnerResourceID xsi:type="xsd:int">296110</OwnerResourceID>
+            <Phone xsi:type="xsd:string">(518) 454-7878</Phone>
+            <PostalCode xsi:type="xsd:string">12205</PostalCode>
+            <SICCode xsi:type="xsd:string"/>
+            <State xsi:type="xsd:string">NY</State>
+            <StockMarket xsi:type="xsd:string"/>
+            <StockSymbol xsi:type="xsd:string"/>
+            <TerritoryID xsi:type="xsd:int">427446</TerritoryID>
+            <AccountType xsi:type="xsd:short">1</AccountType>
+            <WebAddress xsi:type="xsd:string">www.ablemanufacturing.com</WebAddress>
+            <Active xsi:type="xsd:boolean">true</Active>
+            <ClientPortalActive xsi:type="xsd:boolean">true</ClientPortalActive>
+            <TaskFireActive xsi:type="xsd:boolean">true</TaskFireActive>
+            <TaxExempt xsi:type="xsd:boolean">false</TaxExempt>
+            <TaxID xsi:type="xsd:string"/>
+            <AdditionalAddressInformation xsi:type="xsd:string"/>
+            <CountryID xsi:type="xsd:int">237</CountryID>
+            <BillToAddressToUse xsi:type="xsd:int">1</BillToAddressToUse>
+            <BillToAttention xsi:type="xsd:string"/>
+            <BillToAddress1 xsi:type="xsd:string">163 Consaul Road</BillToAddress1>
+            <BillToAddress2 xsi:type="xsd:string"/>
+            <BillToCity xsi:type="xsd:string">Albany</BillToCity>
+            <BillToState xsi:type="xsd:string">NY</BillToState>
+            <BillToZipCode xsi:type="xsd:string">12205</BillToZipCode>
+            <BillToCountryID xsi:type="xsd:int">237</BillToCountryID>
+            <BillToAdditionalAddressInformation xsi:type="xsd:string"/>
+            <InvoiceMethod xsi:type="xsd:int">2</InvoiceMethod>
+            <InvoiceNonContractItemsToParentAccount xsi:type="xsd:boolean">false</InvoiceNonContractItemsToParentAccount>
+            <QuoteTemplateID xsi:type="xsd:int">1</QuoteTemplateID>
+            <QuoteEmailMessageID xsi:type="xsd:int">1</QuoteEmailMessageID>
+            <InvoiceTemplateID xsi:type="xsd:int">1</InvoiceTemplateID>
+            <InvoiceEmailMessageID xsi:type="xsd:int">1</InvoiceEmailMessageID>
+            <CurrencyID xsi:type="xsd:int">1</CurrencyID>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>account</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>296162</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>

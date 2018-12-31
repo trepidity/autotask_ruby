@@ -11,15 +11,18 @@ module AutotaskRuby
         attr_accessor :soap_client, :headers, :logger
 
         def initialize(options = {})
+            integration_code = options[:integration_code] || AutotaskRuby.configuration.integration_code
             @headers = {
                 'tns:AutotaskIntegrations' =>
                     {
-                        'tns:IntegrationCode' => options[:integration_code]
+                        'tns:IntegrationCode' => integration_code
                     }
             }
 
             @ssl_version = options[:ssl_version] || :TLSv1_2
-            @endpoint = options[:endpoint] || 'https://webservices.autotask.net/ATServices/1.5/atws.asmx'
+            @version = options[:version] || AutotaskRuby.configuration.version
+            @host = options[:host] || 'webservices.autotask.net'
+            @endpoint = options[:endpoint] || "https://#{@host}/ATServices/#{@version}/atws.asmx"
 
             # Override optional Savon attributes
             savon_options = {}
@@ -67,6 +70,21 @@ module AutotaskRuby
         def query(entity_type, field = 'id', operation = 'equals', value)
             result = @soap_client.call(:query, message: "<sXML><![CDATA[<queryxml><entity>#{entity_type}</entity><query><field>#{field}<expression op=\"#{operation}\">#{value}</expression></field></query></queryxml>]]></sXML>")
             AutotaskRuby::QueryResponse.new(@client, result)
+        end
+
+        # @param entity_type
+        #   include the entity type. ServiceCall, Appointment, etc.
+        # @param ids
+        #   One or more entity ID's that should be deleted.
+        # @return
+        #   AutotaskRuby::DeleteResponse
+        def delete(entity_type, *ids)
+            entities = ++''
+            ids.each do |id|
+                entities << "<Entity xsi:type=\"#{entity_type}\"><id xsi:type=\"xsd:int\">#{id}</id></Entity>"
+            end
+            resp = @soap_client.call(:delete, message: "<Entities>#{entities.to_s}</Entities>")
+            AutotaskRuby::DeleteResponse.new(@client, resp)
         end
 
     end

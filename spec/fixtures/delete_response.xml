@@ -1,0 +1,13 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <deleteResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <deleteResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults/>
+        <EntityResultType>servicecall</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults/>
+      </deleteResult>
+    </deleteResponse>
+  </soap:Body>
+</soap:Envelope>

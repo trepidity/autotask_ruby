@@ -1,0 +1,93 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="Task">
+            <id>9282</id>
+            <UserDefinedFields/>
+            <AllocationCodeID xsi:type="xsd:int">295895</AllocationCodeID>
+            <AssignedResourceID xsi:type="xsd:int">29684250</AssignedResourceID>
+            <AssignedResourceRoleID xsi:type="xsd:int">340111</AssignedResourceRoleID>
+            <CanClientPortalUserCompleteTask xsi:type="xsd:boolean">false</CanClientPortalUserCompleteTask>
+            <CreateDateTime xsi:type="xsd:dateTime">2018-12-20T17:04:57.977</CreateDateTime>
+            <CreatorResourceID xsi:type="xsd:int">29684292</CreatorResourceID>
+            <DepartmentID xsi:type="xsd:int">295894</DepartmentID>
+            <Description xsi:type="xsd:string">Iste porro consectetur. Rem cum tempore. Quia expedita et.</Description>
+            <EndDateTime xsi:type="xsd:dateTime">2018-12-20T00:00:00</EndDateTime>
+            <EstimatedHours xsi:type="xsd:double">0</EstimatedHours>
+            <ExternalID xsi:type="xsd:string"/>
+            <HoursToBeScheduled xsi:type="xsd:double">0</HoursToBeScheduled>
+            <IsVisibleInClientPortal xsi:type="xsd:boolean">false</IsVisibleInClientPortal>
+            <LastActivityDateTime xsi:type="xsd:dateTime">2018-12-20T17:04:57.977</LastActivityDateTime>
+            <Priority xsi:type="xsd:int">0</Priority>
+            <ProjectID xsi:type="xsd:int">105</ProjectID>
+            <PurchaseOrderNumber xsi:type="xsd:string"/>
+            <RemainingHours xsi:type="xsd:double">0</RemainingHours>
+            <StartDateTime xsi:type="xsd:dateTime">2018-12-20T17:14:54</StartDateTime>
+            <Status xsi:type="xsd:int">15</Status>
+            <TaskIsBillable xsi:type="xsd:boolean">false</TaskIsBillable>
+            <TaskNumber xsi:type="xsd:string">T20181220.0003</TaskNumber>
+            <TaskType xsi:type="xsd:int">1</TaskType>
+            <Title xsi:type="xsd:string">Perspiciatis praesentium voluptatem ad.</Title>
+            <CreatorType xsi:type="xsd:int">1</CreatorType>
+            <LastActivityResourceID xsi:type="xsd:int">29684292</LastActivityResourceID>
+            <LastActivityPersonType xsi:type="xsd:int">1</LastActivityPersonType>
+          </Entity>
+          <Entity xsi:type="Task">
+            <id>9283</id>
+            <UserDefinedFields/>
+            <AllocationCodeID xsi:type="xsd:int">295895</AllocationCodeID>
+            <AssignedResourceID xsi:type="xsd:int">29684250</AssignedResourceID>
+            <AssignedResourceRoleID xsi:type="xsd:int">340111</AssignedResourceRoleID>
+            <CanClientPortalUserCompleteTask xsi:type="xsd:boolean">false</CanClientPortalUserCompleteTask>
+            <CreateDateTime xsi:type="xsd:dateTime">2018-12-20T17:05:05.053</CreateDateTime>
+            <CreatorResourceID xsi:type="xsd:int">29684292</CreatorResourceID>
+            <DepartmentID xsi:type="xsd:int">295894</DepartmentID>
+            <Description xsi:type="xsd:string">Magnam molestias eos. Dolorem possimus illum. Pariatur officia quo.</Description>
+            <EndDateTime xsi:type="xsd:dateTime">2018-12-20T00:00:00</EndDateTime>
+            <EstimatedHours xsi:type="xsd:double">0</EstimatedHours>
+            <ExternalID xsi:type="xsd:string"/>
+            <HoursToBeScheduled xsi:type="xsd:double">0</HoursToBeScheduled>
+            <IsVisibleInClientPortal xsi:type="xsd:boolean">false</IsVisibleInClientPortal>
+            <LastActivityDateTime xsi:type="xsd:dateTime">2018-12-20T17:05:05.053</LastActivityDateTime>
+            <Priority xsi:type="xsd:int">0</Priority>
+            <ProjectID xsi:type="xsd:int">105</ProjectID>
+            <PurchaseOrderNumber xsi:type="xsd:string"/>
+            <RemainingHours xsi:type="xsd:double">0</RemainingHours>
+            <StartDateTime xsi:type="xsd:dateTime">2018-12-20T17:15:02</StartDateTime>
+            <Status xsi:type="xsd:int">15</Status>
+            <TaskIsBillable xsi:type="xsd:boolean">false</TaskIsBillable>
+            <TaskNumber xsi:type="xsd:string">T20181220.0004</TaskNumber>
+            <TaskType xsi:type="xsd:int">1</TaskType>
+            <Title xsi:type="xsd:string">Ea quia facilis culpa.</Title>
+            <CreatorType xsi:type="xsd:int">1</CreatorType>
+            <LastActivityResourceID xsi:type="xsd:int">29684292</LastActivityResourceID>
+            <LastActivityPersonType xsi:type="xsd:int">1</LastActivityPersonType>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>Task</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>9282</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+          <EntityReturnInfo>
+            <EntityId>9283</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>

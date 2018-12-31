@@ -1,0 +1,35 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <createResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <createResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="Appointment">
+            <id>6732</id>
+            <UserDefinedFields/>
+            <ResourceID xsi:type="xsd:int">29684250</ResourceID>
+            <Title xsi:type="xsd:string">Pax8 integration to Autotask. For product</Title>
+            <StartDateTime xsi:type="xsd:dateTime">2018-07-12T13:00:00</StartDateTime>
+            <EndDateTime xsi:type="xsd:dateTime">2018-07-12T14:00:00</EndDateTime>
+            <Description xsi:type="xsd:string">Example from Soap UI</Description>
+            <CreatorResourceID xsi:type="xsd:int">29684244</CreatorResourceID>
+            <CreateDateTime xsi:type="xsd:dateTime">2018-12-29T00:45:48.547</CreateDateTime>
+            <UpdateDateTime xsi:type="xsd:dateTime">2018-12-29T00:45:48.58</UpdateDateTime>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>appointment</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>6732</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </createResult>
+    </createResponse>
+  </soap:Body>
+</soap:Envelope>

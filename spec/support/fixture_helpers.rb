@@ -5,6 +5,14 @@
 
 module FixtureHelpers
     module InstanceMethods
+
+        def stub_client
+            AutotaskRuby::Client.new(basic_auth: %w(api_user@autotaskdemo.com something),
+                                     integration_code: ENV['INTEGRATION_CODE'],
+                                     endpoint: 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx',
+                                     log: false)
+        end
+
         def stub_zone_info_request(options = {})
             options = {
                 method: :post,

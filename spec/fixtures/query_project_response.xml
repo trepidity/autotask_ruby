@@ -1,0 +1,81 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="Project">
+            <id>105</id>
+            <UserDefinedFields>
+              <UserDefinedField>
+                <Name>1: Client Survey Complete</Name>
+                <Value>---</Value>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Campaign Created</Name>
+                <Value>No</Value>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>2: Project Category</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>3: Square Footage</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>4: Field Supervisor</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>5: Customer Secretary &amp; Phone</Name>
+              </UserDefinedField>
+            </UserDefinedFields>
+            <ProjectName xsi:type="xsd:string">Sync 2.0</ProjectName>
+            <AccountID xsi:type="xsd:int">29684280</AccountID>
+            <Type xsi:type="xsd:int">4</Type>
+            <ExtPNumber xsi:type="xsd:string"/>
+            <ProjectNumber xsi:type="xsd:string">P20180129.0001</ProjectNumber>
+            <Description xsi:type="xsd:string"/>
+            <CreateDateTime xsi:type="xsd:dateTime">2018-01-29T00:00:00</CreateDateTime>
+            <CreatorResourceID xsi:type="xsd:int">29684244</CreatorResourceID>
+            <StartDateTime xsi:type="xsd:dateTime">2018-10-18T00:00:00</StartDateTime>
+            <EndDateTime xsi:type="xsd:dateTime">2018-12-22T00:00:00</EndDateTime>
+            <Duration xsi:type="xsd:int">66</Duration>
+            <ActualHours xsi:type="xsd:double">0</ActualHours>
+            <ActualBilledHours xsi:type="xsd:double">0</ActualBilledHours>
+            <EstimatedTime xsi:type="xsd:double">0</EstimatedTime>
+            <LaborEstimatedRevenue xsi:type="xsd:double">0</LaborEstimatedRevenue>
+            <LaborEstimatedCosts xsi:type="xsd:double">0</LaborEstimatedCosts>
+            <LaborEstimatedMarginPercentage xsi:type="xsd:double">0</LaborEstimatedMarginPercentage>
+            <ProjectCostsRevenue xsi:type="xsd:double">0</ProjectCostsRevenue>
+            <ProjectCostsBudget xsi:type="xsd:double">0</ProjectCostsBudget>
+            <ProjectCostEstimatedMarginPercentage xsi:type="xsd:double">0</ProjectCostEstimatedMarginPercentage>
+            <ChangeOrdersRevenue xsi:type="xsd:double">0</ChangeOrdersRevenue>
+            <SGDA xsi:type="xsd:double">0</SGDA>
+            <OriginalEstimatedRevenue xsi:type="xsd:double">0</OriginalEstimatedRevenue>
+            <EstimatedSalesCost xsi:type="xsd:double">0</EstimatedSalesCost>
+            <Status xsi:type="xsd:int">1</Status>
+            <ProjectLeadResourceID xsi:type="xsd:int">29684244</ProjectLeadResourceID>
+            <CompletedPercentage xsi:type="xsd:int">0</CompletedPercentage>
+            <StatusDetail xsi:type="xsd:string"/>
+            <StatusDateTime xsi:type="xsd:dateTime">2018-01-29T13:29:05.497</StatusDateTime>
+            <PurchaseOrderNumber xsi:type="xsd:string"/>
+            <LastActivityResourceID xsi:type="xsd:int">29684292</LastActivityResourceID>
+            <LastActivityDateTime xsi:type="xsd:dateTime">2018-12-20T17:05:05.053</LastActivityDateTime>
+            <LastActivityPersonType xsi:type="xsd:int">1</LastActivityPersonType>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>Project</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>105</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>

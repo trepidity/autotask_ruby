@@ -2,19 +2,32 @@
 
 RSpec.describe AutotaskRuby::Appointment do
     let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>Appointment</entity><query><field>id<expression op="equals">1209</expression></field></query></queryxml>]]></sXML></tns:query>' }
-    let(:endpoint) { 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx' }
-    let(:valid_api_user) { 'api_user@autotaskdemo.com' }
-    let(:valid_password) { 'something' }
-    let(:client) do
-        AutotaskRuby::Client.new(basic_auth: [valid_api_user, valid_password],
-                                 integration_code: ENV['INTEGRATION_CODE'],
-                                 endpoint: endpoint)
-    end
+    let(:client) { stub_client }
 
     context 'when a new instance' do
         let(:result) { described_class.new(client: client) }
 
         it { expect(result).to be_an_instance_of(described_class) }
+    end
+
+    describe 'create' do
+        let(:body) { '<tns:create><Entity xsi:type="Appointment"><Title>Optio accusantium quis nulla.</Title><StartDateTime>2018-06-21T07:30:00</StartDateTime><EndDateTime>2018-06-21T08:30:00</EndDateTime></Entity></tns:create>' }
+        let(:appointment) do
+            described_class.new(client: client, title: 'Optio accusantium quis nulla.',
+                                start_date_time: Time.find_zone!('Eastern Time (US & Canada)').parse('2018-06-21 06:30:00.000000000 -0500'),
+                                end_date_time: Time.find_zone!('Eastern Time (US & Canada)').parse('2018-06-21 07:30:00.000000000 -0500'))
+        end
+        let(:result) { appointment.create }
+
+        before do
+            stub_api_request(query_xml: body, fixture: 'create_appointment_response',
+                             soap_action: '"http://autotask.net/ATWS/v1_5/create"',
+                             env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
+        end
+
+        it { expect(result.entities.first.id).to eql(6732) }
+        it { expect(result.entity_type).to eql('Appointment') }
+
     end
 
     context 'when updating' do
