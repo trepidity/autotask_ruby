@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module AutotaskRuby
+    # Converts Autotask Entity Fields into methods.
     module Fields
         def field(method_name)
             inst_variable_name = "@#{method_name}".to_sym

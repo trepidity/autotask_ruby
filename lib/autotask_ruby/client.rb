@@ -4,22 +4,25 @@ require 'autotask_ruby/version'
 require 'autotask_ruby/resource'
 
 module AutotaskRuby
-    class Client
-        include Query
 
-        NAMESPACE = 'http://autotask.net/ATWS/v1_5/'
-        attr_accessor :client, :headers, :logger
+    # the primary client that interfaces with the SOAP Client that will interface with AutoTask.
+    class Client
+        attr_accessor :soap_client, :headers, :logger
 
         def initialize(options = {})
+            @version = options[:version] || AutotaskRuby.configuration.version
+            integration_code = options[:integration_code] || AutotaskRuby.configuration.integration_code
             @headers = {
                 'tns:AutotaskIntegrations' =>
                     {
-                        'tns:IntegrationCode' => options[:integration_code]
+                        'tns:IntegrationCode' => integration_code
                     }
             }
 
             @ssl_version = options[:ssl_version] || :TLSv1_2
-            @endpoint = options[:endpoint] || 'https://webservices.autotask.net/ATServices/1.5/atws.asmx'
+
+            @host = options[:host] || 'webservices.autotask.net'
+            @endpoint = options[:endpoint] || "https://#{@host}/ATServices/#{@version}/atws.asmx"
 
             # Override optional Savon attributes
             savon_options = {}
@@ -28,10 +31,10 @@ module AutotaskRuby
                 savon_options[key] = options[key] if options.key?(key)
             end
 
-            @client = Savon.client({
+            @soap_client = Savon.client({
                 wsdl: './atws.wsdl',
                 soap_header: @headers,
-                namespaces: { xmlns: NAMESPACE },
+                namespaces: { xmlns: AutotaskRuby.configuration.namespace },
                 logger: Logger.new($stdout),
                 raise_errors: false,
                 log: true,
@@ -43,7 +46,7 @@ module AutotaskRuby
         # Public: Get the names of all wsdl operations.
         # List all available operations from the atws.wsdl
         def operations
-            @client.operations
+            @soap_client.operations
         end
 
         # @param entity, id
@@ -58,5 +61,31 @@ module AutotaskRuby
 
             response.entities.first
         end
+
+        # @param entity_type and value
+        # Other parameters, are optional.
+        #   full set of parameters include entity_type, field, operation, value.
+        # Queries the Autotask QUERY API. Returns a QueryResponse result set.
+        # @return AutotaskRuby::Response.
+        def query(entity_type, field = 'id', operation = 'equals', value)
+            result = @soap_client.call(:query, message: "<sXML><![CDATA[<queryxml><entity>#{entity_type}</entity><query><field>#{field}<expression op=\"#{operation}\">#{value}</expression></field></query></queryxml>]]></sXML>")
+            AutotaskRuby::QueryResponse.new(@client, result)
+        end
+
+        # @param entity_type
+        #   include the entity type. ServiceCall, Appointment, etc.
+        # @param ids
+        #   One or more entity ID's that should be deleted.
+        # @return
+        #   AutotaskRuby::DeleteResponse
+        def delete(entity_type, *ids)
+            entities = ++''
+            ids.each do |id|
+                entities << "<Entity xsi:type=\"#{entity_type}\"><id xsi:type=\"xsd:int\">#{id}</id></Entity>"
+            end
+            resp = @soap_client.call(:delete, message: "<Entities>#{entities.to_s}</Entities>")
+            AutotaskRuby::DeleteResponse.new(@client, resp)
+        end
+
     end
 end

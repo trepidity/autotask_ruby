@@ -5,6 +5,7 @@ require 'byebug'
 require 'autotask_ruby'
 require 'awesome_print'
 require 'webmock/rspec'
+require 'dotenv'
 
 WebMock.disable_net_connect!
 # WebMock.allow_net_connect!
@@ -24,3 +25,5 @@ end
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
+
+Dotenv.load
