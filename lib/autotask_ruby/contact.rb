@@ -13,12 +13,10 @@ module AutotaskRuby
 
         def post_initialize
             belongs_to :account
-            belongs_to :contact
-            belongs_to :assigned_to_resource, class_name: :resource
         end
 
         def full_name
-            [ @first_name, @last_name ].join(' ')
+            [@first_name, @last_name].join(' ')
         end
 
         def email
