@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 RSpec.describe AutotaskRuby::Account do
-    let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>Account</entity><query><field>id<expression op="equals">296162</expression></field></query></queryxml>]]></sXML></tns:query>' }
     let(:client) { stub_client }
     let(:result) { client.find('Account', 296162) }
 
     before do
-        stub_api_request(query_xml: body, fixture: 'account_response',
-                         env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
+        stub_api_request(fixture: 'account_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
     end
 
     it { expect(result.id).to eql(296162) }

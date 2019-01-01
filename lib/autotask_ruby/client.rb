@@ -69,7 +69,7 @@ module AutotaskRuby
         # @return AutotaskRuby::Response.
         def query(entity_type, field = 'id', operation = 'equals', value)
             result = @soap_client.call(:query, message: "<sXML><![CDATA[<queryxml><entity>#{entity_type}</entity><query><field>#{field}<expression op=\"#{operation}\">#{value}</expression></field></query></queryxml>]]></sXML>")
-            AutotaskRuby::QueryResponse.new(@client, result)
+            AutotaskRuby::QueryResponse.new(self, result)
         end
 
         # @param entity_type

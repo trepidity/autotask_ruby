@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 RSpec.describe AutotaskRuby::Contact do
-    let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>Contact</entity><query><field>id<expression op="equals">29684281</expression></field></query></queryxml>]]></sXML></tns:query>' }
     let(:client) { stub_client }
     let(:result) { client.find('Contact', 29684281) }
 
     before do
-        stub_api_request(query_xml: body, fixture: 'query_contact_response',
+        stub_api_request(fixture: 'query_contact_response',
                          env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
     end
 

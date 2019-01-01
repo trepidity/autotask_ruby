@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe AutotaskRuby::Appointment do
-    let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>Appointment</entity><query><field>id<expression op="equals">1209</expression></field></query></queryxml>]]></sXML></tns:query>' }
     let(:client) { stub_client }
 
     context 'when a new instance' do
@@ -11,7 +10,6 @@ RSpec.describe AutotaskRuby::Appointment do
     end
 
     describe 'create' do
-        let(:body) { '<tns:create><Entity xsi:type="Appointment"><Title>Optio accusantium quis nulla.</Title><StartDateTime>2018-06-21T07:30:00</StartDateTime><EndDateTime>2018-06-21T08:30:00</EndDateTime></Entity></tns:create>' }
         let(:appointment) do
             described_class.new(client: client, title: 'Optio accusantium quis nulla.',
                                 start_date_time: time_with_zone.parse('2018-06-21 06:30:00 -0500'),
@@ -20,7 +18,7 @@ RSpec.describe AutotaskRuby::Appointment do
         let(:result) { appointment.create }
 
         before do
-            stub_api_request(query_xml: body, fixture: 'create_appointment_response',
+            stub_api_request(fixture: 'create_appointment_response',
                              soap_action: '"http://autotask.net/ATWS/v1_5/create"',
                              env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end
@@ -31,7 +29,6 @@ RSpec.describe AutotaskRuby::Appointment do
     end
 
     context 'when updating' do
-        let(:body) { '<tns:update><Entity xsi:type="Appointment"><id>1208</id><Title>Optio accusantium quis nulla.</Title><StartDateTime>2018-06-21T07:30:00</StartDateTime><EndDateTime>2018-06-21T08:30:00</EndDateTime></Entity></tns:update>' }
         let(:appointment) do
             described_class.new(client: client, id: 1208, title: 'Optio accusantium quis nulla.',
                                 start_date_time: time_with_zone.parse('2018-06-21 06:30:00 -0500'),
@@ -40,7 +37,7 @@ RSpec.describe AutotaskRuby::Appointment do
         let(:result) { appointment.update }
 
         before do
-            stub_api_request(query_xml: body, fixture: 'appointment_response',
+            stub_api_request(fixture: 'appointment_response',
                              soap_action: '"http://autotask.net/ATWS/v1_5/update"',
                              env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end
@@ -54,7 +51,7 @@ RSpec.describe AutotaskRuby::Appointment do
         let(:find) { client.find('Appointment', 1209) }
 
         before do
-            stub_api_request(query_xml: body, fixture: 'appointment_response',
+            stub_api_request(fixture: 'appointment_response',
                              soap_action: '"http://autotask.net/ATWS/v1_5/query"',
                              env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end

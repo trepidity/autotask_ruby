@@ -17,11 +17,10 @@ module AutotaskRuby
         end
 
         describe 'delete' do
-            let(:body) {'<tns:delete><Entities><Entity xsi:type="ServiceCall"><id xsi:type="xsd:int">271</id></Entity></Entities></tns:delete>'}
             let(:result) { client.delete('ServiceCall', 271) }
 
             before do
-                stub_api_request(query_xml: body, fixture: 'delete_response',
+                stub_api_request(fixture: 'delete_response',
                                  soap_action: '"http://autotask.net/ATWS/v1_5/delete"',
                                  env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
             end
@@ -31,11 +30,10 @@ module AutotaskRuby
         end
 
         describe 'query objects' do
-            let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>Resource</entity><query><field>LastName<expression op="equals">jennings</expression></field></query></queryxml>]]></sXML></tns:query>' }
             let(:query) { client.query('Resource', 'LastName', 'equals', 'jennings') }
 
             before do
-                stub_api_request(query_xml: body, fixture: 'query_response',
+                stub_api_request(fixture: 'query_response',
                                  soap_action: '"http://autotask.net/ATWS/v1_5/query"',
                                  env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
             end

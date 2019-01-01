@@ -37,7 +37,6 @@ module FixtureHelpers
 
             instance_url = options[:instance_url] || 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx'
             stub_request(options[:method], instance_url)
-                .with(body: http_body(options[:env_headers], options[:query_xml]), headers: http_headers(options))
                 .to_return(status: 200, body: fixture(options[:fixture]), headers: {})
         end
 
