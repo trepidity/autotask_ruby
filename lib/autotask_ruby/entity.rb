@@ -73,6 +73,7 @@ module AutotaskRuby
             return node.text.to_i if node.attr('type').blank? || node.attr('type').text.eql?('xsd:int')
             return to_date_time(node.text) if node.attr('type').text.eql?('xsd:dateTime')
             return node.text.to_f if node.attr('type').text.eql?('xsd:double')
+            return node.text.to_f if node.attr('type').text.eql?('xsd:decimal')
 
             node.text
         end

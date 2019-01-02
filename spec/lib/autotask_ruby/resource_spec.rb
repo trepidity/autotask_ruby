@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe AutotaskRuby::Resource do
-    let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>resource</entity><query><field>id<expression op="equals">29684250</expression></field></query></queryxml>]]></sXML></tns:query>' }
     let(:endpoint) { 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx' }
     let(:client) { stub_client }
     let(:resource) { described_class.new(client: client, id: 29_684_250 ) }
@@ -10,8 +9,7 @@ RSpec.describe AutotaskRuby::Resource do
         let(:resource) { client.find(:resource, 29_684_250) }
 
         before do
-            stub_api_request(query_xml: body, fixture: 'query_resource_response',
-                             env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
+            stub_api_request(fixture: 'query_resource_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end
 
         it { expect(resource.first_name).to eql('Raymond') }
@@ -21,12 +19,10 @@ RSpec.describe AutotaskRuby::Resource do
     end
 
     describe 'resource with appointments' do
-        let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>Appointment</entity><query><field>ResourceID<expression op="equals">29684250</expression></field></query></queryxml>]]></sXML></tns:query>' }
         let(:result) { resource.appointments }
 
         before do
-            stub_api_request(query_xml: body, fixture: 'query_resource_appointments_response',
-                             env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
+            stub_api_request(fixture: 'query_resource_appointments_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end
 
         it { expect(result).to be_instance_of(AutotaskRuby::QueryResponse) }
@@ -34,12 +30,10 @@ RSpec.describe AutotaskRuby::Resource do
     end
 
     describe 'resource with tickets' do
-        let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>Ticket</entity><query><field>AssignedResourceID<expression op="equals">29684250</expression></field></query></queryxml>]]></sXML></tns:query>' }
         let(:result) { resource.tickets }
 
         before do
-            stub_api_request(query_xml: body, fixture: 'query_ticket_response',
-                             env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
+            stub_api_request(fixture: 'query_ticket_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end
 
         it { expect(result).to be_instance_of(AutotaskRuby::QueryResponse) }
@@ -48,12 +42,10 @@ RSpec.describe AutotaskRuby::Resource do
     end
 
     describe 'resource with tasks' do
-        let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>Task</entity><query><field>AssignedResourceID<expression op="equals">29684250</expression></field></query></queryxml>]]></sXML></tns:query>' }
         let(:result) { resource.tasks }
 
         before do
-            stub_api_request(query_xml: body, fixture: 'query_tasks_response',
-                             env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
+            stub_api_request(fixture: 'query_tasks_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end
 
         it { expect(result).to be_instance_of(AutotaskRuby::QueryResponse) }
@@ -62,13 +54,11 @@ RSpec.describe AutotaskRuby::Resource do
     end
 
     describe 'resource with account_to_dos' do
-        let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>AccountToDo</entity><query><field>AssignedToResourceID<expression op="equals">29684250</expression></field></query></queryxml>]]></sXML></tns:query>' }
         let(:endpoint) { 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx' }
         let(:result) { resource.account_to_dos }
 
         before do
-            stub_api_request(query_xml: body, fixture: 'query_resource_account_to_do_response',
-                             env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
+            stub_api_request(fixture: 'query_resource_account_to_do_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
         end
 
         it 'has two account_to_dos' do

@@ -1,0 +1,60 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="Contact">
+            <id>29684281</id>
+            <UserDefinedFields/>
+            <Active xsi:type="xsd:int">1</Active>
+            <AddressLine xsi:type="xsd:string">1901 Chouteau Avenue</AddressLine>
+            <AddressLine1 xsi:type="xsd:string"/>
+            <AlternatePhone xsi:type="xsd:string"/>
+            <City xsi:type="xsd:string">Saint Louis</City>
+            <Country xsi:type="xsd:string">United States</Country>
+            <CreateDate xsi:type="xsd:dateTime">2013-03-08T14:28:38.407</CreateDate>
+            <EMailAddress xsi:type="xsd:string">MRevels@example.com</EMailAddress>
+            <Extension xsi:type="xsd:string"/>
+            <FaxNumber xsi:type="xsd:string"/>
+            <FirstName xsi:type="xsd:string">Maria</FirstName>
+            <AccountID xsi:type="xsd:int">29684280</AccountID>
+            <LastName xsi:type="xsd:string">Revels</LastName>
+            <LastActivityDate xsi:type="xsd:dateTime">2018-10-18T21:47:16</LastActivityDate>
+            <LastModifiedDate xsi:type="xsd:dateTime">2018-10-18T21:47:16.597</LastModifiedDate>
+            <MobilePhone xsi:type="xsd:string"/>
+            <Note xsi:type="xsd:string"/>
+            <Notification xsi:type="xsd:boolean">true</Notification>
+            <Phone xsi:type="xsd:string">555.554.5555</Phone>
+            <RoomNumber xsi:type="xsd:string"/>
+            <State xsi:type="xsd:string">MO</State>
+            <Title xsi:type="xsd:string"/>
+            <ZipCode xsi:type="xsd:string">63103</ZipCode>
+            <AdditionalAddressInformation xsi:type="xsd:string"/>
+            <ExternalID xsi:type="xsd:string"/>
+            <CountryID xsi:type="xsd:int">237</CountryID>
+            <BulkEmailOptOut xsi:type="xsd:boolean">false</BulkEmailOptOut>
+            <SurveyOptOut xsi:type="xsd:boolean">false</SurveyOptOut>
+            <FacebookUrl xsi:type="xsd:string"/>
+            <TwitterUrl xsi:type="xsd:string"/>
+            <LinkedInUrl xsi:type="xsd:string"/>
+            <PrimaryContact xsi:type="xsd:boolean">false</PrimaryContact>
+            <SolicitationOptOut xsi:type="xsd:boolean">false</SolicitationOptOut>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>contact</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>29684281</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>

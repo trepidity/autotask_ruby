@@ -12,8 +12,8 @@ module AutotaskRuby
         # @return Entity
         # Returns a single Entity if a match was found.
         # Returns nil if no match is found.
-        def find(entity, id)
-            response = query(entity, id)
+        def find(entity, field = 'id', id)
+            response = query(entity, field, id)
             return nil if response.entities.empty?
 
             response.entities.first
