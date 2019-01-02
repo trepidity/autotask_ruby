@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
     spec.email = ['jared@jaredjennings.org']
 
     spec.summary = 'A ruby client for the Autotask API'
-    spec.description = 'A ruby client for the Autotask API'
+    spec.description = 'A ruby client for the Autotask API. The client tries to use a full-featured approach.'
     spec.homepage = 'https://github.com/trepidity/autotask_ruby'
     spec.license = 'MIT'
 
@@ -34,18 +34,18 @@ Gem::Specification.new do |spec|
     spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
     spec.require_paths = ['lib']
 
-    spec.add_runtime_dependency 'activesupport'
-    spec.add_runtime_dependency 'savon'
+    spec.add_runtime_dependency 'activesupport', '~> 5.2'
+    spec.add_runtime_dependency 'savon', '~> 2.12'
 
-    spec.add_development_dependency 'awesome_print'
-    spec.add_development_dependency 'bundler'
-    spec.add_development_dependency 'byebug'
-    spec.add_development_dependency 'dotenv'
-    spec.add_development_dependency 'guard'
-    spec.add_development_dependency 'guard-rspec'
-    spec.add_development_dependency 'rubocop-rspec'
-    spec.add_development_dependency 'rake'
-    spec.add_development_dependency 'rspec'
-    spec.add_development_dependency 'rubocop'
-    spec.add_development_dependency 'webmock'
+    spec.add_development_dependency 'awesome_print', '~> 1.8'
+    spec.add_development_dependency 'bundler', '~> 1.17'
+    spec.add_development_dependency 'byebug', '~> 10.0'
+    spec.add_development_dependency 'dotenv', '~> 2.5'
+    spec.add_development_dependency 'guard', '~> 2.15'
+    spec.add_development_dependency 'guard-rspec', '~> 4.7'
+    spec.add_development_dependency 'rubocop-rspec', '~> 1.31'
+    spec.add_development_dependency 'rake', '~> 12.3'
+    spec.add_development_dependency 'rspec', '~> 3.8'
+    spec.add_development_dependency 'rubocop', '~> 0.62'
+    spec.add_development_dependency 'webmock', '~> 3.5'
 end
