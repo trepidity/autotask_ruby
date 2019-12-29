@@ -2,7 +2,7 @@
 
 require 'rspec'
 
-RSpec.describe AutotaskRuby::QueryResponse do
+RSpec.describe AutotaskRuby::Response do
     let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>AccountToDo</entity><query><field>id<expression op="equals">29684510</expression></field></query></queryxml>]]></sXML></tns:query>' }
 
     let(:endpoint) { 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx' }

@@ -27,7 +27,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Zone Info
+Each customer is placed into different AutoTask endpoints.
+
+```ruby
+zone_info = AutotaskRuby::ZoneInfo.new(username)
+
+# the website URL
+zone_info.web_url
+
+# the service endpoint.
+zone_info.url
+```
 
 ## Development
 
