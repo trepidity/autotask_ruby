@@ -1,43 +1,20 @@
 # frozen_string_literal: true
 
 module AutotaskRuby
-  class AccountToDo
-    include Entity
-    include AutotaskRuby::Query
+    # Represents the Autotask AccountToDo entity
+    class AccountToDo
+        include AutotaskRuby::Entity
+        include AutotaskRuby::Query
 
-    FIELDS = %i[id AccountID ContactID ActivityDescription StartDateTime EndDateTime
+        FIELDS = %i[id AccountID ContactID ActivityDescription StartDateTime EndDateTime
                     AssignedToResourceID ActionType CreateDateTime LastModifiedDate].freeze
-    attr_accessor :id, :account_id, :contact_id, :activity_description, :start_date_time, :end_date_time,
-                  :assigned_to_resource_id, :action_type, :create_date_time, :last_modified_date
+        .each do |field|
+            self.attr_accessor :"#{field.to_s.underscore}"
+        end
 
-    def initialize(client)
-      @client = client
+        def post_initialize
+            belongs_to :resource
+            belongs_to :account
+        end
     end
-
-    def build(entity)
-      FIELDS.each do |field|
-        instance_variable_set("@#{field}".underscore, field_set(entity, field))
-      end
-    end
-
-    def account
-      query('Account', @account_id).entities.first
-    end
-
-    def contact
-      query('Contact', @contact_id).entities.first
-    end
-
-    def resource
-      query('Resource', @assigned_to_resource_id).entities.first
-    end
-
-    def action_type
-      query('ActionType', @action_type).entities.first
-    end
-
-    def save
-      # TODO: save to autotask
-    end
-  end
 end

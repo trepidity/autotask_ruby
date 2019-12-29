@@ -27,17 +27,23 @@ Or install it yourself as:
 
 ## Usage
 
-### Zone Info
-Each customer is placed into different AutoTask endpoints.
+The `Client.rb` must be initialized to begin. The client class is responsible for
+interacting with the API.
+
+Every call to the Autotask API must include a 'IntegrationCode'. You can get this from Autotask.
+Secondly, Autotask has multiple endpoints. Be sure to use the appropriate endpoint.
+
+### Initializing the Client.
+```ruby
+AutotaskRuby::Client.new(basic_auth: [valid_api_user, valid_password],
+                                 integration_code: ENV['INTEGRATION_CODE'],
+                                 endpoint: endpoint)
+```
+
+### Using the find method
 
 ```ruby
-zone_info = AutotaskRuby::ZoneInfo.new(username)
-
-# the website URL
-zone_info.web_url
-
-# the service endpoint.
-zone_info.url
+client.find('Account', 296162)
 ```
 
 ## Development

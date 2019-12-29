@@ -1,32 +1,20 @@
+# frozen_string_literal: true
+
 RSpec.describe AutotaskRuby::Contact do
-  let(:body) { '<tns:query><sXML><![CDATA[<queryxml><entity>Contact</entity><query><field>id<expression op="equals">29684281</expression></field></query></queryxml>]]></sXML></tns:query>' }
-  let(:endpoint) { 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx' }
-  let(:valid_api_user) { 'api_user@autotaskdemo.com' }
-  let(:valid_password) { 'something' }
-  let(:client) do
-    AutotaskRuby::Client.new(basic_auth: [valid_api_user, valid_password],
-                             integration_code: ENV['INTEGRATION_CODE'],
-                             endpoint: endpoint)
-  end
-
-  context 'when a new instance' do
-    let(:result) { described_class.new(client: client) }
-
-    it { expect(result).to be_an_instance_of(described_class) }
-  end
-
-  describe 'find' do
-    let(:find) { client.find('Contact', 29684281) }
+    let(:client) { stub_client }
+    let(:result) { client.find('Contact', 29684281) }
 
     before do
-      stub_api_request(query_xml: body, fixture: 'contact_response',
-                       soap_action: '"http://autotask.net/ATWS/v1_5/query"',
-                       env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
+        stub_api_request(fixture: 'query_contact_response',
+                         env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
     end
 
-    it { expect(find.id).to be(29_684_281) }
-    it { expect(find.first_name).to eql('Maria') }
-
-  end
+    it { expect(result.id).to eql(29684281) }
+    it { expect(result.address_line).to eql('1901 Chouteau Avenue') }
+    it { expect(result.e_mail_address).to eql('MRevels@example.com') }
+    it { expect(result.city).to eql('Saint Louis') }
+    it { expect(result.state).to eql('MO') }
+    it { expect(result.country).to eql('United States') }
+    it { expect(result.active).to be_truthy }
 
 end

@@ -1,26 +1,22 @@
 # frozen_string_literal: true
 
 module AutotaskRuby
-  class Resource
-    include AutotaskRuby::Entity
-    include AutotaskRuby::Query
+    # Represents the Autotask Entity Resource
+    class Resource
+        include AutotaskRuby::Entity
+        include AutotaskRuby::Query
 
-    FIELDS = %i[id Email Email2 Email3 FirstName HomePhone Initials LastName LocationID MiddleName
+        FIELDS = %i[id Email Email2 Email3 FirstName HomePhone Initials LastName LocationID MiddleName
                     MobilePhone OfficeExtension OfficePhone ResourceType Title UserName UserType Active].freeze
-    attr_accessor :id, :email, :first_name, :last_name, :user_name, :active
+        .each do |field|
+            self.attr_accessor :"#{field.to_s.underscore}"
+        end
 
-    def initialize(client)
-      @client = client
+        def post_initialize
+            has_many :account_to_dos, foreign_key: 'AssignedToResourceID'
+            has_many :appointments, foreign_key: 'ResourceID'
+            has_many :tickets, foreign_key: 'AssignedResourceID'
+            has_many :tasks, foreign_key: 'AssignedResourceID'
+        end
     end
-
-    def build(entity)
-      FIELDS.each do |field|
-        instance_variable_set("@#{field}".underscore, field_set(entity, field))
-      end
-    end
-
-    def account_to_dos
-      query('AccountToDo', 'AssignedToResourceID', @id).entities
-    end
-  end
 end

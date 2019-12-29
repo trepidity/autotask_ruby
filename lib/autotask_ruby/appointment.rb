@@ -2,13 +2,19 @@
 
 module AutotaskRuby
 
-  # Represents an AutoTask Appointment Entity
-  class Appointment
-    include Entity
+    # Represents an AutoTask Appointment Entity
+    class Appointment
+        include Entity
 
-    FIELDS = %i[id Title Description ResourceID StartDateTime EndDateTime CreateDateTime UpdateDateTime].freeze
-    attr_accessor :id, :title, :description, :start_date_time, :end_date_time, :resource_id, :create_date_time, :update_date_time
+        FIELDS = %i[id Title Description ResourceID StartDateTime EndDateTime CreateDateTime UpdateDateTime].freeze
+        .each do |field|
+            self.attr_accessor :"#{field.to_s.underscore}"
+        end
 
-  end
+        def post_initialize
+            belongs_to :resource
+        end
+
+    end
 
 end

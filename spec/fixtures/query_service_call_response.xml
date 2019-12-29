@@ -1,0 +1,38 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="ServiceCall">
+            <id>337</id>
+            <UserDefinedFields/>
+            <AccountID xsi:type="xsd:int">29684280</AccountID>
+            <StartDateTime xsi:type="xsd:dateTime">2018-11-20T09:00:00</StartDateTime>
+            <EndDateTime xsi:type="xsd:dateTime">2018-11-20T10:00:00</EndDateTime>
+            <Description xsi:type="xsd:string">new Service Call</Description>
+            <Complete xsi:type="xsd:int">0</Complete>
+            <CreatorResourceID xsi:type="xsd:int">29684244</CreatorResourceID>
+            <CreateDateTime xsi:type="xsd:dateTime">2018-11-19T12:19:51.813</CreateDateTime>
+            <LastModifiedDateTime xsi:type="xsd:dateTime">2018-11-19T12:19:55.903</LastModifiedDateTime>
+            <Duration xsi:type="xsd:decimal">1.0000</Duration>
+            <Status xsi:type="xsd:int">1</Status>
+            <AccountPhysicalLocationID xsi:type="xsd:int">42</AccountPhysicalLocationID>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>servicecall</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>337</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>

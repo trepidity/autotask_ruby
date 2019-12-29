@@ -1,0 +1,55 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="Appointment">
+            <id>1205</id>
+            <UserDefinedFields/>
+            <ResourceID xsi:type="xsd:int">29684250</ResourceID>
+            <Title xsi:type="xsd:string">Sit enim sunt debitis.</Title>
+            <StartDateTime xsi:type="xsd:dateTime">2018-11-17T22:32:00</StartDateTime>
+            <EndDateTime xsi:type="xsd:dateTime">2018-11-17T23:22:00</EndDateTime>
+            <Description xsi:type="xsd:string">Laborum voluptas laboriosam. Itaque quasi quo. Quaerat ipsa nemo.</Description>
+            <CreatorResourceID xsi:type="xsd:int">29684292</CreatorResourceID>
+            <CreateDateTime xsi:type="xsd:dateTime">2018-11-17T22:22:04.26</CreateDateTime>
+            <UpdateDateTime xsi:type="xsd:dateTime">2018-11-17T22:22:05.637</UpdateDateTime>
+          </Entity>
+          <Entity xsi:type="Appointment">
+            <id>1206</id>
+            <UserDefinedFields/>
+            <ResourceID xsi:type="xsd:int">29684250</ResourceID>
+            <Title xsi:type="xsd:string">Et quae non numquam.</Title>
+            <StartDateTime xsi:type="xsd:dateTime">2018-11-17T22:32:00</StartDateTime>
+            <EndDateTime xsi:type="xsd:dateTime">2018-11-17T23:22:00</EndDateTime>
+            <Description xsi:type="xsd:string">Et perferendis nihil. Ducimus ratione quia. Repellat sit nulla.</Description>
+            <CreatorResourceID xsi:type="xsd:int">29684292</CreatorResourceID>
+            <CreateDateTime xsi:type="xsd:dateTime">2018-11-17T22:22:08.04</CreateDateTime>
+            <UpdateDateTime xsi:type="xsd:dateTime">2018-11-17T22:22:08.04</UpdateDateTime>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>appointment</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>1205</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+          <EntityReturnInfo>
+            <EntityId>1206</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>
