@@ -1,5 +1,5 @@
 module AutotaskRuby
-    class DeleteResponse
-        include Response
-    end
+  class DeleteResponse
+    include Response
+  end
 end
