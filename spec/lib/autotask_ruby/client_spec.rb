@@ -22,11 +22,11 @@ module AutotaskRuby
       before do
         stub_api_request(fixture: 'delete_response',
                          soap_action: '"http://autotask.net/ATWS/v1_5/delete"',
-                         env_headers: {integration_code: ENV['INTEGRATION_CODE']})
+                         env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
       end
 
       it { expect(result).to be_instance_of(DeleteResponse) }
-      it { expect(result.return_code).to eql(1) }
+      it { expect(result.return_code).to be(1) }
     end
 
     describe 'query objects' do
@@ -35,12 +35,12 @@ module AutotaskRuby
       before do
         stub_api_request(fixture: 'query_response',
                          soap_action: '"http://autotask.net/ATWS/v1_5/query"',
-                         env_headers: {integration_code: ENV['INTEGRATION_CODE']})
+                         env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
       end
 
       it { expect(query).to be_instance_of(QueryResponse) }
       it { expect(query.entity_type).to eq('Resource') }
-      it { expect(query.entities.last.id).to eql(29_684_250) }
+      it { expect(query.entities.last.id).to be(29_684_250) }
       it { expect(query.entities.last.email).to eql('rspecninjatools@example.com') }
       it { expect(query.entities.last.first_name).to eql('Raymond') }
       it { expect(query.entities.last.last_name).to eql('Jennings') }

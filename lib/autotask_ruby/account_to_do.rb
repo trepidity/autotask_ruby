@@ -7,9 +7,9 @@ module AutotaskRuby
     include AutotaskRuby::Query
 
     FIELDS = %i[id AccountID ContactID ActivityDescription StartDateTime EndDateTime
-                    AssignedToResourceID ActionType CreateDateTime LastModifiedDate].freeze
-                 .each do |field|
-      self.attr_accessor :"#{field.to_s.underscore}"
+                AssignedToResourceID ActionType CreateDateTime LastModifiedDate].freeze
+             .each do |field|
+      attr_accessor :"#{field.to_s.underscore}"
     end
 
     def post_initialize

@@ -7,9 +7,9 @@ module AutotaskRuby
     include AutotaskRuby::Query
 
     FIELDS = %i[id Email Email2 Email3 FirstName HomePhone Initials LastName LocationID MiddleName
-                    MobilePhone OfficeExtension OfficePhone ResourceType Title UserName UserType Active].freeze
-                 .each do |field|
-      self.attr_accessor :"#{field.to_s.underscore}"
+                MobilePhone OfficeExtension OfficePhone ResourceType Title UserName UserType Active].freeze
+             .each do |field|
+      attr_accessor :"#{field.to_s.underscore}"
     end
 
     def post_initialize

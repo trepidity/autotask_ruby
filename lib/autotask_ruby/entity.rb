@@ -15,7 +15,7 @@ module AutotaskRuby
 
     def initialize(options = {})
       @client = options if options.instance_of?(Client)
-      return unless options.kind_of?(Hash)
+      return unless options.is_a?(Hash)
 
       options.each do |k, v|
         instance_variable_set("@#{k}", v)
@@ -26,9 +26,7 @@ module AutotaskRuby
 
     # default post_initialize methods.
     # Other classes that implement the Entity Class may override this.
-    def post_initialize
-
-    end
+    def post_initialize; end
 
     # Iterates the fields of a Entity Class Type.
     # The fields are turned into instance variables.
@@ -79,9 +77,10 @@ module AutotaskRuby
     end
 
     def to_bool(arg)
-      return true if arg == true || arg =~ (/(true|t|yes|y|1)$/i)
-      return false if arg == false || arg.empty? || arg =~ (/(false|f|no|n|0)$/i)
-      raise ArgumentError.new("invalid value for Boolean: \"#{arg}\"")
+      return true if arg == true || arg =~ /(true|t|yes|y|1)$/i
+      return false if arg == false || arg.empty? || arg =~ /(false|f|no|n|0)$/i
+
+      raise ArgumentError, "invalid value for Boolean: \"#{arg}\""
     end
 
     # converts the entity attributes to XML representation.

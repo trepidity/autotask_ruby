@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 module AutotaskRuby
-
   # Represents the Autotask Entity Contact
   class Contact
     include Entity
 
     FIELDS = %i[id Active AddressLine City Country CreateDate EMailAddress Extension FirstName AccountID LastName MobilePhone Phone State Title ZipCode].freeze
-                 .each do |field|
-      self.attr_accessor :"#{field.to_s.underscore}"
+                                                                                                                                                        .each do |field|
+      attr_accessor :"#{field.to_s.underscore}"
     end
 
     def post_initialize

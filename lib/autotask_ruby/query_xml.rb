@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Copied from https://github.com/scoop/autotask_api/blob/master/lib/autotask_api/query_xml.rb
 # Thank you for the great work.
 
@@ -43,6 +45,5 @@ module AutotaskRuby
         end
       end.doc.root.to_xml
     end
-
   end
 end

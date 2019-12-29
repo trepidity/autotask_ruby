@@ -6,9 +6,9 @@ module AutotaskRuby
     include Entity
 
     FIELDS = %i[id AllocationCodeID AssignedResourceID CreateDateTime DepartmentID Description EstimatedHours
-        LastActivityDateTime ProjectID Status TaskNumber TaskType Title ].freeze
-                 .each do |field|
-      self.attr_accessor :"#{field.to_s.underscore}"
+                LastActivityDateTime ProjectID Status TaskNumber TaskType Title ].freeze
+             .each do |field|
+      attr_accessor :"#{field.to_s.underscore}"
     end
 
     def post_initialize

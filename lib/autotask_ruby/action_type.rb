@@ -6,8 +6,8 @@ module AutotaskRuby
     include Entity
 
     FIELDS = %i[id Name View Active SystemActionType].freeze
-                 .each do |field|
-      self.attr_accessor :"#{field.to_s.underscore}"
+                                                     .each do |field|
+      attr_accessor :"#{field.to_s.underscore}"
     end
   end
 end

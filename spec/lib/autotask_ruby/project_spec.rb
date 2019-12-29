@@ -6,14 +6,13 @@ RSpec.describe AutotaskRuby::Project do
 
   before do
     stub_api_request(fixture: 'query_project_response',
-                     env_headers: {integration_code: ENV['INTEGRATION_CODE']})
+                     env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
   end
 
-  it { expect(result.id).to eql(105) }
+  it { expect(result.id).to be(105) }
   it { expect(result.project_name).to eql('Sync 2.0') }
-  it { expect(result.account_id).to eql(29684280) }
+  it { expect(result.account_id).to be(29_684_280) }
   it { expect(result.project_number).to eql('P20180129.0001') }
-  it { expect(result.duration).to eql(66) }
-  it { expect(result.status).to eql(1) }
-
+  it { expect(result.duration).to be(66) }
+  it { expect(result.status).to be(1) }
 end

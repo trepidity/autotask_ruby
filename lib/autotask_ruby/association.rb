@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AutotaskRuby
   # handles loading associated entities.
   module Association
@@ -5,7 +7,7 @@ module AutotaskRuby
     # Thanks to scoop for this example.
     def belongs_to(name, options = {})
       name = name.to_s
-      klass = "#{(options[:class_name] || name).to_s.classify}"
+      klass = (options[:class_name] || name).to_s.classify.to_s
       foreign_key = name.foreign_key
       define_singleton_method(name) do
         find(klass, send(foreign_key))
@@ -16,8 +18,8 @@ module AutotaskRuby
     # Thanks to scoop for this example.
     def has_one(name, options = {})
       name = name.to_s
-      options.reverse_merge! foreign_key: self.to_s.foreign_key.camelize
-      klass = "#{(options[:class_name] || name).to_s.classify}"
+      options.reverse_merge! foreign_key: to_s.foreign_key.camelize
+      klass = (options[:class_name] || name).to_s.classify.to_s
       define_singleton_method(name) do
         find(klass, options[:foreign_key], id).first
       end
@@ -28,8 +30,8 @@ module AutotaskRuby
     # Thanks to scoop for this example.
     def has_many(name, options = {})
       name = name.to_s
-      options.reverse_merge! foreign_key: self.to_s.foreign_key.camelize
-      klass = "#{(options[:class_name] || name).to_s.classify}"
+      options.reverse_merge! foreign_key: to_s.foreign_key.camelize
+      klass = (options[:class_name] || name).to_s.classify.to_s
       define_singleton_method(name) do
         query(klass, options[:foreign_key], id)
       end

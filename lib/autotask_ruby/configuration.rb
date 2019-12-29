@@ -1,5 +1,6 @@
-module AutotaskRuby
+# frozen_string_literal: true
 
+module AutotaskRuby
   class Configuration
     attr_accessor :integration_code
     attr_accessor :version
@@ -21,5 +22,4 @@ module AutotaskRuby
       yield(configuration)
     end
   end
-
 end

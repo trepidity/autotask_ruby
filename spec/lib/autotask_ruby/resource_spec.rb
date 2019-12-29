@@ -9,7 +9,7 @@ RSpec.describe AutotaskRuby::Resource do
     let(:resource) { client.find(:resource, 29_684_250) }
 
     before do
-      stub_api_request(fixture: 'query_resource_response', env_headers: {integration_code: ENV['INTEGRATION_CODE']})
+      stub_api_request(fixture: 'query_resource_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
     end
 
     it { expect(resource.first_name).to eql('Raymond') }
@@ -22,7 +22,7 @@ RSpec.describe AutotaskRuby::Resource do
     let(:result) { resource.appointments }
 
     before do
-      stub_api_request(fixture: 'query_resource_appointments_response', env_headers: {integration_code: ENV['INTEGRATION_CODE']})
+      stub_api_request(fixture: 'query_resource_appointments_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
     end
 
     it { expect(result).to be_instance_of(AutotaskRuby::QueryResponse) }
@@ -33,7 +33,7 @@ RSpec.describe AutotaskRuby::Resource do
     let(:result) { resource.tickets }
 
     before do
-      stub_api_request(fixture: 'query_ticket_response', env_headers: {integration_code: ENV['INTEGRATION_CODE']})
+      stub_api_request(fixture: 'query_ticket_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
     end
 
     it { expect(result).to be_instance_of(AutotaskRuby::QueryResponse) }
@@ -45,7 +45,7 @@ RSpec.describe AutotaskRuby::Resource do
     let(:result) { resource.tasks }
 
     before do
-      stub_api_request(fixture: 'query_tasks_response', env_headers: {integration_code: ENV['INTEGRATION_CODE']})
+      stub_api_request(fixture: 'query_tasks_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
     end
 
     it { expect(result).to be_instance_of(AutotaskRuby::QueryResponse) }
@@ -58,12 +58,12 @@ RSpec.describe AutotaskRuby::Resource do
     let(:result) { resource.account_to_dos }
 
     before do
-      stub_api_request(fixture: 'query_resource_account_to_do_response', env_headers: {integration_code: ENV['INTEGRATION_CODE']})
+      stub_api_request(fixture: 'query_resource_account_to_do_response', env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
     end
 
     it 'has two account_to_dos' do
-      resource.id = 29684250
-      expect(result.entities.size).to eql(2)
+      resource.id = 29_684_250
+      expect(result.entities.size).to be(2)
     end
   end
 end
