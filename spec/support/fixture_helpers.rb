@@ -91,7 +91,3 @@ module FixtureHelpers
     end
   end
 end
-
-RSpec.configure do |config|
-  config.include FixtureHelpers::InstanceMethods
-end

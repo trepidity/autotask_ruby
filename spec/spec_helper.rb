@@ -20,6 +20,8 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.include FixtureHelpers::InstanceMethods
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc,

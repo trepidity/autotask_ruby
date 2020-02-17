@@ -90,5 +90,20 @@ module AutotaskRuby
       result = @soap_client.call(:query, message: message)
       AutotaskRuby::QueryResponse.new(self, result)
     end
+
+    # updates the entity in the AutoTask API.
+    # All fields are iterated and this builds the XML message that is sent to AutoTask.
+    # Any field that is not filled out will be sent as empty. This means that it will wipe
+    # any value that AutoTask has for that field.
+    def update(entity_xml)
+      result = @soap_client.call(:update, message: "<Entities>#{entity_xml}</Entities>")
+      UpdateResponse.new(@client, result)
+    end
+
+    # creates an entity in AutoTask.
+    def create(entity_xml)
+      result = @soap_client.call(:create, message: "<Entities>#{entity_xml}</Entities>")
+      CreateResponse.new(@client, result)
+    end
   end
 end
