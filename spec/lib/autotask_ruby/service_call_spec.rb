@@ -23,4 +23,5 @@ RSpec.describe AutotaskRuby::Contact do
   it { expect(result.end_date_time).to be_within(1.second).of(time_with_zone.parse('2018-11-20 10:00:00 -0500')) }
   it { expect(result.last_modified_date_time).to be_within(1.second).of(time_with_zone.parse('2018-11-19 12:19:55 -0500')) }
   it { expect(result.resource).to be_instance_of(AutotaskRuby::Resource) }
+  it { expect(result.resource.id).to be(29_684_250) }
 end

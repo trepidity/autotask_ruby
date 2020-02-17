@@ -6,6 +6,7 @@ require 'autotask_ruby'
 require 'awesome_print'
 require 'webmock/rspec'
 require 'dotenv'
+require 'support/fixture_helpers'
 
 WebMock.disable_net_connect!
 # WebMock.allow_net_connect!
