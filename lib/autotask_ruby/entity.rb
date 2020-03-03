@@ -104,7 +104,9 @@ module AutotaskRuby
     # @param field_value
     #   the field value.
     def format_field_to_xml(field_name, field_value)
-      return "<#{field_name}>#{field_value.strftime(AUTOTASK_TIME_FORMAT)}</#{field_name}>" if field_value.instance_of?(ActiveSupport::TimeWithZone)
+      if field_value.instance_of?(ActiveSupport::TimeWithZone)
+        return "<#{field_name}>#{field_value.strftime(AUTOTASK_TIME_FORMAT)}</#{field_name}>"
+      end
 
       "<#{field_name}>#{field_value}</#{field_name}>"
     end

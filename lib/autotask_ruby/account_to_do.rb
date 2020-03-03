@@ -24,6 +24,5 @@ module AutotaskRuby
     def action
       find('ActionType', action_type)
     end
-
   end
 end

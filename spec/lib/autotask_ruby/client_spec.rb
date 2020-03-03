@@ -10,7 +10,7 @@ module AutotaskRuby
     VALID_USERNAME = 'jared@jaredjenningsdemo.com'
 
     describe 'operations' do
-      let(:client) { AutotaskRuby::Client.new }
+      let(:client) { described_class.new }
 
       it { expect(client.operations).to be_an(Array) }
       it { expect(client.operations).to include(:query) }

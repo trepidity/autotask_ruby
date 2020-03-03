@@ -8,7 +8,7 @@ module AutotaskRuby
 
     def initialize(username)
       @client = Savon.client(wsdl: './atws.wsdl', endpoint: ENDPOINT)
-      @raw_result = @client.call(:get_zone_info, message: {'UserName' => username})
+      @raw_result = @client.call(:get_zone_info, message: { 'UserName' => username })
       @zone_info = @raw_result.body[:get_zone_info_response][:get_zone_info_result]
     end
 
