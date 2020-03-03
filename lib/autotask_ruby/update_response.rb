@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 module AutotaskRuby
-  class QueryResponse
-    include Constants
+  class UpdateResponse
     include Response
   end
 end

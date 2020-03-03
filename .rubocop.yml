@@ -1,7 +1,7 @@
 require: rubocop-rspec
 
 Metrics/LineLength:
-  Max: 160
+  Max: 120
 
 Layout/IndentationWidth:
-  Width: 4
+  Width: 2

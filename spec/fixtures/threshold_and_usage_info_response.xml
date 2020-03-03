@@ -1,0 +1,23 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <getThresholdAndUsageInfoResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <getThresholdAndUsageInfoResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults/>
+        <EntityResultType/>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>0</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+            <Message>ThresholdOfExternalRequest: 10000; TimeframeOfLimitation: 60; numberOfExternalRequest: 0;</Message>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </getThresholdAndUsageInfoResult>
+    </getThresholdAndUsageInfoResponse>
+  </soap:Body>
+</soap:Envelope>
