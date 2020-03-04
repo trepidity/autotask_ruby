@@ -9,7 +9,7 @@ module FixtureHelpers
       AutotaskRuby::Client.new(basic_auth: %w[api_user@autotaskdemo.com something],
                                integration_code: ENV['INTEGRATION_CODE'],
                                endpoint: 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx',
-                               log: false)
+                               log: true)
     end
 
     def stub_zone_info_request(options = {})
@@ -18,8 +18,7 @@ module FixtureHelpers
         status: 200
       }.merge(options)
 
-      instance_url = options[:instance_url] || 'https://webservices.autotask.net/ATServices/1.5/atws.asmx'
-      stub_request(options[:method], instance_url)
+      stub_request(options[:method], 'https://webservices.autotask.net/ATServices/1.5/atws.asmx')
         .with(body: options[:query_xml], headers: zone_info_http_headers)
         .to_return(status: 200, body: fixture(options[:fixture]), headers: {})
     end
@@ -34,8 +33,7 @@ module FixtureHelpers
         status: 200
       }.merge(options)
 
-      instance_url = options[:instance_url] || 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx'
-      stub_request(options[:method], instance_url)
+      stub_request(options[:method], 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx')
         .to_return(status: 200, body: fixture(options[:fixture]), headers: {})
     end
 

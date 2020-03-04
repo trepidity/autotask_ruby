@@ -9,19 +9,15 @@ module AutotaskRuby
     attr_accessor :soap_client, :headers, :logger
 
     def initialize(options = {})
-      @version = options[:version] || AutotaskRuby.configuration.version
-      integration_code = options[:integration_code] || AutotaskRuby.configuration.integration_code
       @headers = {
         'tns:AutotaskIntegrations' =>
             {
-              'tns:IntegrationCode' => integration_code
+              'tns:IntegrationCode' => options[:integration_code]
             }
       }
 
       @ssl_version = options[:ssl_version] || :TLSv1_2
-
-      @host = options[:host] || 'webservices.autotask.net'
-      @endpoint = options[:endpoint] || "https://#{@host}/ATServices/#{@version}/atws.asmx"
+      @endpoint = options[:endpoint] || 'https://webservices.autotask.net/ATServices/1.5/atws.asmx'
 
       # Override optional Savon attributes
       savon_options = {}

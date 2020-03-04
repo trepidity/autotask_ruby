@@ -2,12 +2,7 @@
 
 module AutotaskRuby
   describe Client do
-    let(:endpoint) { 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx' }
     let(:client) { stub_client }
-
-    URL = 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx'
-    WEBURL = 'https://ww2.autotask.net/'
-    VALID_USERNAME = 'jared@jaredjenningsdemo.com'
 
     describe 'operations' do
       let(:client) { described_class.new }
@@ -17,17 +12,16 @@ module AutotaskRuby
       it { expect(client.operations).to include(:get_threshold_and_usage_info) }
     end
 
-    describe 'get_threshold_and_usage_info' do
-      let(:client) { described_class.new }
-
+    context 'when get_threshold_and_usage_info' do
       before do
         stub_api_request(fixture: 'threshold_and_usage_info_response',
-                         instance_url: 'https://webservices.autotask.net/ATServices/1.5/atws.asmx',
                          soap_action: '"http://autotask.net/ATWS/v1_5/getThresholdAndUsageInfo"',
                          env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
       end
 
-      it { expect(client.threshold_and_usage_info.return_code).to be(1)}
+      describe 'return_code' do
+        it { expect(client.threshold_and_usage_info.return_code).to be(1)}
+      end
     end
 
     describe 'delete' do
