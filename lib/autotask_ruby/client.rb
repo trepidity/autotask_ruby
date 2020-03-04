@@ -105,5 +105,10 @@ module AutotaskRuby
       result = @soap_client.call(:create, message: "<Entities>#{entity_xml}</Entities>")
       CreateResponse.new(@client, result)
     end
+
+    def threshold_and_usage_info
+      result = @soap_client.call(:get_threshold_and_usage_info)
+      ThresholdAndUsageInfoResponse.new(@client, result)
+    end
   end
 end

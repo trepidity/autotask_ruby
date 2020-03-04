@@ -14,6 +14,20 @@ module AutotaskRuby
 
       it { expect(client.operations).to be_an(Array) }
       it { expect(client.operations).to include(:query) }
+      it { expect(client.operations).to include(:get_threshold_and_usage_info) }
+    end
+
+    describe 'get_threshold_and_usage_info' do
+      let(:client) { described_class.new }
+
+      before do
+        stub_api_request(fixture: 'threshold_and_usage_info_response',
+                         instance_url: 'https://webservices.autotask.net/ATServices/1.5/atws.asmx',
+                         soap_action: '"http://autotask.net/ATWS/v1_5/getThresholdAndUsageInfo"',
+                         env_headers: { integration_code: ENV['INTEGRATION_CODE'] })
+      end
+
+      it { expect(client.threshold_and_usage_info.return_code).to be(1)}
     end
 
     describe 'delete' do

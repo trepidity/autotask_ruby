@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     autotask_ruby (2.0.1)
-      activesupport
-      savon
+      activesupport (~> 6.0)
+      savon (~> 2.12)
 
 GEM
   remote: https://rubygems.org/
@@ -69,7 +69,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     parallel (1.19.1)
-    parser (2.7.0.2)
+    parser (2.7.0.4)
       ast (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -81,6 +81,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rexml (3.2.4)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -94,14 +95,15 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
-    rubocop (0.79.0)
+    rubocop (0.80.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
       rainbow (>= 2.2.2, < 4.0)
+      rexml
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
-    rubocop-rspec (1.37.1)
+    rubocop-rspec (1.38.1)
       rubocop (>= 0.68.1)
     ruby-progressbar (1.10.1)
     safe_yaml (1.0.5)
@@ -134,17 +136,17 @@ PLATFORMS
 
 DEPENDENCIES
   autotask_ruby!
-  awesome_print
-  bundler
-  byebug
-  dotenv
-  guard
-  guard-rspec
-  rake
-  rspec
-  rubocop
-  rubocop-rspec
-  webmock
+  awesome_print (~> 1.8)
+  bundler (~> 2.1)
+  byebug (~> 11.1)
+  dotenv (~> 2.7)
+  guard (~> 2.16)
+  guard-rspec (~> 4.7)
+  rake (~> 13.0)
+  rspec (~> 3.9)
+  rubocop (~> 0.80)
+  rubocop-rspec (~> 1.38)
+  webmock (~> 3.8)
 
 BUNDLED WITH
    2.1.2
