@@ -32,7 +32,8 @@ module AutotaskRuby
         namespaces: { xmlns: AutotaskRuby.configuration.namespace },
         logger: Logger.new($stdout),
         raise_errors: false,
-        log: true,
+        log: options[:log] || true,
+        log_level: options[:log_level] || 'debug',
         endpoint: @endpoint,
         ssl_version: @ssl_version # Sets ssl_version for HTTPI adapter
       }.update(savon_options))
