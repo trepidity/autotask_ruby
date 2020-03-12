@@ -40,4 +40,21 @@ RSpec.describe AutotaskRuby::Contact do
       it { expect(result.account.id).to be(296_162)}
     end
   end
+
+  context 'when a ServiceCall is associated with a ticket' do
+    describe 'it returns a ticket' do
+      let(:result) { client.find('ServiceCall', 337) }
+
+      before do
+        stub_request(:post, 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx')
+            .to_return({ status: 200, body: fixture('query_service_call_response') },
+                       { status: 200, body: fixture('query_service_call_ticket_response') },
+                       { status: 200, body: fixture('query_ticket_response')})
+      end
+
+      it { expect(result.ticket.id).to be(9_136) }
+      it { expect(result.ticket.ticket_number).to eql('T20180710.0001') }
+      it { expect(result.ticket.title).to eql('Bug in Service Calls') }
+    end
+  end
 end

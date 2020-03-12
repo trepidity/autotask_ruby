@@ -7,7 +7,7 @@ module AutotaskRuby
     include Query
 
     FIELDS = %i[id AccountID StartDateTime EndDateTime Description Complete CreateDateTime LastModifiedDateTime Duration Status].freeze
-                 .each do |field|
+                                                                                                                                .each do |field|
       attr_accessor :"#{field.to_s.underscore}"
     end
 
@@ -31,6 +31,13 @@ module AutotaskRuby
     # Returns the associated Account
     def account
       find('Account', account_id)
+    end
+
+    def ticket
+      service_call_ticket = find('ServiceCallTicket', 'ServiceCallId', id)
+      return find('Ticket', 'id', service_call_ticket.ticket_id) unless service_call_ticket.nil?
+
+      nil
     end
   end
 end
