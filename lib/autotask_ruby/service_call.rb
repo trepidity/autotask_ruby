@@ -27,5 +27,10 @@ module AutotaskRuby
     def resource
       find('Resource', resource_id)
     end
+
+    # Returns the associated Account
+    def account
+      find('Account', account_id)
+    end
   end
 end

@@ -24,4 +24,20 @@ RSpec.describe AutotaskRuby::Contact do
   it { expect(result.last_modified_date_time).to be_within(1.second).of(time_with_zone.parse('2018-11-19 12:19:55 -0500')) }
   it { expect(result.resource).to be_instance_of(AutotaskRuby::Resource) }
   it { expect(result.resource.id).to be(29_684_250) }
+
+
+  context 'when a ServiceCall is associated with an account' do
+    describe 'it has an account name' do
+      let(:result) { client.find('ServiceCall', 337) }
+
+      before do
+        stub_request(:post, 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx')
+            .to_return({ status: 200, body: fixture('query_service_call_response') },
+                       { status: 200, body: fixture('account_response') })
+      end
+
+      it { expect(result.account.account_name).to eql('ABLE Manufacturing*')}
+      it { expect(result.account.id).to be(296_162)}
+    end
+  end
 end

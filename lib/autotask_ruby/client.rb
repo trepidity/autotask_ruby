@@ -33,7 +33,7 @@ module AutotaskRuby
         logger: Logger.new($stdout),
         raise_errors: false,
         log: options[:log] || true,
-        log_level: options[:log_level] || 'debug',
+        log_level: options[:log_level] || :info,
         endpoint: @endpoint,
         ssl_version: @ssl_version # Sets ssl_version for HTTPI adapter
       }.update(savon_options))
