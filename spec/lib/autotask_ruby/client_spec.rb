@@ -20,7 +20,7 @@ module AutotaskRuby
       end
 
       describe 'return_code' do
-        it { expect(client.threshold_and_usage_info.return_code).to be(1)}
+        it { expect(client.threshold_and_usage_info.return_code).to be(1) }
       end
     end
 

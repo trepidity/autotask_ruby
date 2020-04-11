@@ -25,19 +25,18 @@ RSpec.describe AutotaskRuby::Contact do
   it { expect(result.resource).to be_instance_of(AutotaskRuby::Resource) }
   it { expect(result.resource.id).to be(29_684_250) }
 
-
   context 'when a ServiceCall is associated with an account' do
     describe 'it has an account name' do
       let(:result) { client.find('ServiceCall', 337) }
 
       before do
         stub_request(:post, 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx')
-            .to_return({ status: 200, body: fixture('query_service_call_response') },
-                       { status: 200, body: fixture('account_response') })
+          .to_return({ status: 200, body: fixture('query_service_call_response') },
+                     { status: 200, body: fixture('account_response') })
       end
 
-      it { expect(result.account.account_name).to eql('ABLE Manufacturing*')}
-      it { expect(result.account.id).to be(296_162)}
+      it { expect(result.account.account_name).to eql('ABLE Manufacturing*') }
+      it { expect(result.account.id).to be(296_162) }
     end
   end
 
@@ -47,9 +46,9 @@ RSpec.describe AutotaskRuby::Contact do
 
       before do
         stub_request(:post, 'https://webservices2.autotask.net/ATServices/1.5/atws.asmx')
-            .to_return({ status: 200, body: fixture('query_service_call_response') },
-                       { status: 200, body: fixture('query_service_call_ticket_response') },
-                       { status: 200, body: fixture('query_ticket_response')})
+          .to_return({ status: 200, body: fixture('query_service_call_response') },
+                     { status: 200, body: fixture('query_service_call_ticket_response') },
+                     { status: 200, body: fixture('query_ticket_response') })
       end
 
       it { expect(result.ticket.id).to be(9_136) }

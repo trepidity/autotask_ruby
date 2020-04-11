@@ -1,7 +1,9 @@
 require: rubocop-rspec
 
-Metrics/LineLength:
+# Commonly used screens these days easily fit more than 80 characters.
+Layout/LineLength:
   Max: 120
 
 Layout/IndentationWidth:
+  # Number of spaces for each indentation level.
   Width: 2
