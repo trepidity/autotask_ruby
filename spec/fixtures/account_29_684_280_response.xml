@@ -1,0 +1,116 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="Account">
+            <id>29684280</id>
+            <UserDefinedFields>
+              <UserDefinedField>
+                <Name>Continuum Site ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Email List</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Kaseya Customer ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>LogMeIn Account ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Managed Services Site ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Managed Workplace Site ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>N-central Customer ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Newsletter List</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Number of Employees</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Revenue</Name>
+                <Value>0</Value>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Salesforce Account ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Silverback Name Site ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Silverback Site ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>sync_exclude</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Telemarketing Status</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>VARStreet Account ID</Name>
+              </UserDefinedField>
+            </UserDefinedFields>
+            <Address1 xsi:type="xsd:string">1901 Chouteau Avenue</Address1>
+            <AlternatePhone1 xsi:type="xsd:string"/>
+            <AlternatePhone2 xsi:type="xsd:string"/>
+            <City xsi:type="xsd:string">Saint Louis</City>
+            <Country xsi:type="xsd:string">United States</Country>
+            <CreateDate xsi:type="xsd:dateTime">2013-03-08T14:26:35.53</CreateDate>
+            <Fax xsi:type="xsd:string"/>
+            <LastActivityDate xsi:type="xsd:dateTime">2020-05-29T17:06:16.77</LastActivityDate>
+            <AccountName xsi:type="xsd:string">My Utility Services</AccountName>
+            <AccountNumber xsi:type="xsd:string"/>
+            <OwnerResourceID xsi:type="xsd:int">29684244</OwnerResourceID>
+            <Phone xsi:type="xsd:string">555.555.5555</Phone>
+            <PostalCode xsi:type="xsd:string">63103</PostalCode>
+            <SICCode xsi:type="xsd:string"/>
+            <State xsi:type="xsd:string">MO</State>
+            <StockMarket xsi:type="xsd:string"/>
+            <StockSymbol xsi:type="xsd:string"/>
+            <AccountType xsi:type="xsd:short">1</AccountType>
+            <Active xsi:type="xsd:boolean">true</Active>
+            <ClientPortalActive xsi:type="xsd:boolean">true</ClientPortalActive>
+            <TaskFireActive xsi:type="xsd:boolean">false</TaskFireActive>
+            <TaxExempt xsi:type="xsd:boolean">false</TaxExempt>
+            <TaxID xsi:type="xsd:string"/>
+            <AdditionalAddressInformation xsi:type="xsd:string"/>
+            <CountryID xsi:type="xsd:int">237</CountryID>
+            <BillToAddressToUse xsi:type="xsd:int">1</BillToAddressToUse>
+            <BillToAttention xsi:type="xsd:string"/>
+            <BillToAddress1 xsi:type="xsd:string">1901 Chouteau Avenue</BillToAddress1>
+            <BillToAddress2 xsi:type="xsd:string"/>
+            <BillToCity xsi:type="xsd:string">Saint Louis</BillToCity>
+            <BillToState xsi:type="xsd:string">MO</BillToState>
+            <BillToZipCode xsi:type="xsd:string">63103</BillToZipCode>
+            <BillToCountryID xsi:type="xsd:int">237</BillToCountryID>
+            <BillToAdditionalAddressInformation xsi:type="xsd:string"/>
+            <QuoteTemplateID xsi:type="xsd:int">1</QuoteTemplateID>
+            <QuoteEmailMessageID xsi:type="xsd:int">1</QuoteEmailMessageID>
+            <InvoiceTemplateID xsi:type="xsd:int">104</InvoiceTemplateID>
+            <InvoiceEmailMessageID xsi:type="xsd:int">1</InvoiceEmailMessageID>
+            <CurrencyID xsi:type="xsd:int">1</CurrencyID>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>account</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>29684280</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>

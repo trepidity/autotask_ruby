@@ -1,0 +1,96 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <queryResponse xmlns="http://autotask.net/ATWS/v1_5/">
+      <queryResult>
+        <ReturnCode>1</ReturnCode>
+        <EntityResults>
+          <Entity xsi:type="Ticket">
+            <id>9137</id>
+            <UserDefinedFields>
+              <UserDefinedField>
+                <Name>Continuum Owner</Name>
+                <Value>2</Value>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Continuum Status</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Continuum Ticket ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Device ID Number</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Kaseya Alert ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Kaseya Ticket ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Managed Services Alert ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Managed Workplace Alert ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Managed Workplace Ticket ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>N-central Alert ID</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Room Number</Name>
+              </UserDefinedField>
+              <UserDefinedField>
+                <Name>Silverback Alert ID</Name>
+              </UserDefinedField>
+            </UserDefinedFields>
+            <AccountID xsi:type="xsd:int">29684280</AccountID>
+            <ContactID xsi:type="xsd:int">29684281</ContactID>
+            <CreateDate xsi:type="xsd:dateTime">2018-07-24T19:14:09.953</CreateDate>
+            <CreatorResourceID xsi:type="xsd:int">29684244</CreatorResourceID>
+            <Description xsi:type="xsd:string">Ticket Description</Description>
+            <DueDateTime xsi:type="xsd:dateTime">2018-07-26T09:00:00</DueDateTime>
+            <LastActivityDate xsi:type="xsd:dateTime">2018-07-24T19:14:36.24</LastActivityDate>
+            <Priority xsi:type="xsd:int">2</Priority>
+            <QueueID xsi:type="xsd:int">29683972</QueueID>
+            <AssignedResourceID xsi:type="xsd:int">29684291</AssignedResourceID>
+            <AssignedResourceRoleID xsi:type="xsd:int">29683541</AssignedResourceRoleID>
+            <Source xsi:type="xsd:int">5</Source>
+            <Status xsi:type="xsd:int">1</Status>
+            <TicketNumber xsi:type="xsd:string">T20180724.0001</TicketNumber>
+            <Title xsi:type="xsd:string">Service Call Ticket for Testing</Title>
+            <Resolution xsi:type="xsd:string"/>
+            <PurchaseOrderNumber xsi:type="xsd:string"/>
+            <TicketType xsi:type="xsd:int">1</TicketType>
+            <ChangeInfoField1 xsi:type="xsd:string"/>
+            <ChangeInfoField2 xsi:type="xsd:string"/>
+            <ChangeInfoField3 xsi:type="xsd:string"/>
+            <ChangeInfoField4 xsi:type="xsd:string"/>
+            <ChangeInfoField5 xsi:type="xsd:string"/>
+            <TicketCategory xsi:type="xsd:int">3</TicketCategory>
+            <ExternalID xsi:type="xsd:string"/>
+            <CreatorType xsi:type="xsd:int">1</CreatorType>
+            <AccountPhysicalLocationID xsi:type="xsd:int">42</AccountPhysicalLocationID>
+            <LastActivityPersonType xsi:type="xsd:int">1</LastActivityPersonType>
+            <LastActivityResourceID xsi:type="xsd:int">29684244</LastActivityResourceID>
+          </Entity>
+        </EntityResults>
+        <EntityResultType>ticket</EntityResultType>
+        <Errors/>
+        <EntityReturnInfoResults>
+          <EntityReturnInfo>
+            <EntityId>9137</EntityId>
+            <DatabaseAction>None</DatabaseAction>
+            <DuplicateStatus>
+              <Found>false</Found>
+              <MatchInfo/>
+              <Ignored>false</Ignored>
+            </DuplicateStatus>
+            <Message/>
+          </EntityReturnInfo>
+        </EntityReturnInfoResults>
+      </queryResult>
+    </queryResponse>
+  </soap:Body>
+</soap:Envelope>
