@@ -13,5 +13,7 @@ RSpec.describe AutotaskRuby::Account do
   it { expect(result.address1).to eql('163 Consaul Road') }
   it { expect(result.city).to eql('Albany') }
   it { expect(result.country).to eql('United States') }
+  it { expect(result.postal_code).to eql('12205') }
+  it { expect(result.state).to eql('NY') }
   it { expect(result.active).to be_truthy }
 end
